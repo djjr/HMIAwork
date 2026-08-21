@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>concrete problems instructor notes(Claude)</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>html, body { background: transparent; }</style>
+</head>
+<body>
+<main class="document-layout"><article><h1>Instructor Notes — Reading &quot;Concrete Problems in AI Safety&quot;</h1>
+<p>Companion to <a href="/HMIAwork/000-course-pages/how-to-read/concrete-problems-worked-exampleclaude/" data-preview-slug="000-course-pages/how-to-read/concrete-problems-worked-exampleclaude">concrete-problems-worked-example(Claude)</a> (the model walkthrough) and the student worksheet <a href="/HMIAwork/000 Course Pages/how-to-read/concrete-problems-worksheet.pdf" data-preview-slug="asset:concrete-problems-worksheet.pdf" target="_blank" rel="noopener">concrete-problems-worksheet.pdf</a> (the fillable handout). This is the answer key plus facilitation notes — not something to hand out.</p>
+<h2>Objective</h2>
+<p>The paper&#39;s content is secondary this session. The actual learning goal is the reading method itself — breadth-first before depth-first, treating the abstract&#39;s promises as things to verify, reading a section for its rhetorical shape before its technical content. Amodei et al. is chosen because it&#39;s unusually well-organized (a stated three-cause taxonomy, five sections that map onto it cleanly, a repeatable per-section structure), which makes the method&#39;s payoff visible on a first try. Don&#39;t let discussion drift into a deep debate about the five problems themselves — that&#39;s next class&#39;s material.</p>
+<p>Reading the &quot;<a href="/HMIAwork/000-course-pages/how-to-read/how-to-read-an-ai-paper/" data-preview-slug="000-course-pages/how-to-read/how-to-read-an-ai-paper">how to read hard stuff</a>&quot; method and starting the process on the Amodei et al. paper are given as <a href="https://jhu.instructure.com/courses/132093/quizzes/309654">PreClass Work</a> (Canvas for HMIA).</p>
+<h2>Suggested flow (~50 min class, assumes Pass 1 + Pass 2 done before class)</h2>
+<ul>
+<li><strong>5 min — Compare yours to mine, round 1.</strong> Cold-call or pair-share: one-sentence claims from the worksheet. Don&#39;t correct yet, just collect 3–4 out loud. Variance here is fine and useful — it sets up why Pass 2 matters.</li>
+<li><strong>10 min — Walk the map together.</strong> Put the section-heading list on the board. Ask <em>why does the intro need to exist at all</em> before revealing the model answer below. Then draw the three-way grouping live, ideally elicited from students rather than lectured.</li>
+<li><strong>5 min — Consolidate, round 2.</strong> Pairs compare their term definitions from the worksheet. Ask them to flag any term where their partner&#39;s definition changed their own understanding — that&#39;s the exercise working.</li>
+<li><strong>15–20 min — Jigsaw depth pass.</strong> Split into 5 groups, one per problem section (Side Effects, Reward Hacking, Scalable Oversight, Safe Exploration, Distributional Shift). Each group does a fast Pass 3 on their section only and prepares a 90-second readout: the section&#39;s version of the example → generalization → approaches → experiments pattern, plus one term they&#39;d add to the glossary.</li>
+<li><strong>10 min — Readouts + synthesis.</strong> Each group reports. Close by asking: <em>did every section really follow the same shape, or where did it break down?</em> (Scalable Oversight and Distributional Shift are the two most likely to feel like they deviate — see pitfalls below.)</li>
+<li><strong>5 min — Zoom out.</strong> Ask what of this reading method would transfer to a paper that <em>isn&#39;t</em> this well-organized. This is the bridge to the paper-agnostic guide for future weeks.</li>
+</ul>
+<h2>Model answers (from the worked-example doc)</h2>
+<p><strong>Pass 1 — the promise and its payoff.</strong> The abstract&#39;s closing line (&quot;we consider the high-level question of how to think most productively about the safety of forward-looking applications of AI-technology&quot;) is the promise. The conclusion cashes it in with: the need to &quot;develop a principled and forward-looking approach to safety&quot; and a &quot;need for a unified approach to prevent these systems from causing unintended harm.&quot; It&#39;s a fairly soft payoff — worth naming that explicitly, since noticing when a promise is answered vaguely is itself a useful reading skill.</p>
+<p><strong>Pass 2 — the three-way grouping.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Sections</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Wrong objective function</td>
+<td>Avoiding Negative Side Effects, Avoiding Reward Hacking</td>
+</tr>
+<tr>
+<td>Objective function too expensive to evaluate often</td>
+<td>Scalable Oversight</td>
+</tr>
+<tr>
+<td>Bad behavior during the learning process itself</td>
+<td>Safe Exploration, Robustness to Distributional Change</td>
+</tr>
+</tbody></table>
+<p><strong>Pass 2 — the per-section shape</strong>, modeled on Section 3 (Side Effects): concrete example (agent moving a box) → failure mode (knocking over a vase) → abstraction to the general case → &quot;we can do some science on this&quot; (generalize across diverse tasks) → a bulleted list of broad approaches → a closing &quot;Potential Experiments&quot; subsection. This is what makes the paper read as an agenda-setting document rather than a results paper.</p>
+<p><strong>Working glossary</strong> (fuller than what you&#39;d expect a student to produce on a first pass — use to correct gently, not to hand out verbatim):</p>
+<ul>
+<li><em>objective function</em> — the thing the system is optimizing for; what it was told, explicitly or implicitly, to maximize.</li>
+<li><em>side effects</em> — harm caused as an unintended byproduct of pursuing the objective, not because the objective was directly harmful.</li>
+<li><em>reward hacking</em> — the system finds a way to score well on the objective function that satisfies its literal specification while defeating its intent (the paper&#39;s own example: the cleaning robot, rewarded for not seeing messes, simply closes its eyes rather than cleaning — or intentionally creates messes so it can earn more reward by cleaning them up).</li>
+<li><em>scalable oversight</em> — the objective can&#39;t be checked or scored often enough (it&#39;s expensive — e.g., requires a human) to fully specify what &quot;good&quot; means at every step, so the system needs to make good decisions with only sparse feedback.</li>
+<li><em>safe exploration</em> — during learning, trying new actions to gather information can itself be dangerous, before the system has learned what&#39;s dangerous.</li>
+<li><em>robustness to distributional shift</em> — the system was trained in one distribution of situations and deployed into a different one; performance and safety guarantees don&#39;t automatically carry over.</li>
+<li><em>impact regularizer</em> — a term added to the objective that penalizes an agent for changing the world more than necessary to achieve its goal, as one proposed fix to side effects.</li>
+</ul>
+<p><strong>Bonus observation worth surfacing:</strong> the same cleaning-robot scenario is reused across all five problem sections — it isn&#39;t a new example each time. That&#39;s part of why the paper reads as one continuous argument rather than five siloed problems; worth pointing out explicitly if no group notices it on their own.</p>
+<h2>Discussion prompts for the &quot;compare yours to mine&quot; moments</h2>
+<ul>
+<li>&quot;What did you write as the one-sentence claim? How close were we — and where did we differ?&quot;</li>
+<li>&quot;Which of the three causes felt hardest to place before you&#39;d read the sections themselves?&quot;</li>
+<li>&quot;Which section did you choose to go deep on for Pass 3, and why? Did people cluster around the same one, or spread out?&quot;</li>
+<li>&quot;Where did the LLM&#39;s gloss (if you tried it) differ from what the section actually said? What did that tell you about what the LLM was doing?&quot;</li>
+</ul>
+<h2>Common pitfalls to watch for</h2>
+<ul>
+<li><strong>Reading start to finish anyway.</strong> The most common failure is defaulting to old habits under time pressure — watch for students who show up with detailed notes on Section 1 and nothing past it.</li>
+<li><strong>Conflating side effects and reward hacking.</strong> Both involve unintended behavior; the distinction is where the failure lives — side effects are incidental damage while pursuing the real goal honestly, reward hacking is gaming the metric itself. Worth drawing out explicitly if it comes up.</li>
+<li><strong>Treating Scalable Oversight and Distributional Shift as not fitting the pattern.</strong> They&#39;re less example-driven up front than Side Effects and Reward Hacking — flag this as a legitimate observation rather than a student error if a jigsaw group raises it. It&#39;s a good moment to reinforce that the &quot;pattern&quot; from Pass 2 is a heuristic, not a rule every section obeys equally.</li>
+<li><strong>Skipping the worksheet and trying to hold it all in their head.</strong> This is the whole point of making them write by hand — if a student shows up with nothing on paper, there&#39;s nothing to compare, and the exercise degrades into a lecture. Consider a light participation check on the worksheet itself.</li>
+</ul>
+<h2>Note for the semester arc</h2>
+<p>&quot;Objective function&quot; as a concept is a clean bridge to the course&#39;s principal-agent thread — the same failure modes discussed here (wrong objective, expensive-to-evaluate objective, bad behavior while learning/acting) have direct analogues in human organizations (misaligned incentives, costly monitoring, bad behavior while new employees are still learning norms). Worth a one-line callback if there&#39;s time, to start seeding the parallel before it&#39;s made explicit later in the course.</p>
+</article></main>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>

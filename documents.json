@@ -1,0 +1,307 @@
+{
+  "000-course-pages/00-wiki": {
+    "title": "00 Wiki",
+    "excerpt": "Contents of the 00 Wiki folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/00-wiki/"
+  },
+  "000-course-pages": {
+    "title": "000 Course Pages",
+    "excerpt": "Contents of the 000 Course Pages folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/"
+  },
+  "ai-101-materials": {
+    "title": "AI 101 Materials",
+    "excerpt": "Contents of the AI 101 Materials folder.",
+    "tags": [],
+    "url": "/HMIAwork/ai-101-materials/"
+  },
+  "ai-101-materials/ai-101-part-one-claude-notes": {
+    "title": "AI 101 Part One Claude Notes",
+    "excerpt": "Delivered as AI101Part1.ipynb in the session where this was built. Not stored in the project itself (binary .ipynb) — re-generate or ask for it again if needed; the build script and structure below are enough to reconstruct or extend it.",
+    "tags": [],
+    "url": "/HMIAwork/ai-101-materials/ai-101-part-one-claude-notes/"
+  },
+  "000-course-pages/ai101": {
+    "title": "AI101",
+    "excerpt": "Contents of the AI101 folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/ai101/"
+  },
+  "000-course-pages/alignment101/alignment-101-instructors-guide": {
+    "title": "Alignment 101 (instructor's guide)",
+    "excerpt": "We don't assume that we understand much more about alignment than everyday sense of \"AI being on our side\" or \"not a threat.\" Our goal for this module/session is to acquire a beginner's level appreciation of what AI scientists mean by the term.",
+    "tags": [
+      "2"
+    ],
+    "url": "/HMIAwork/000-course-pages/alignment101/alignment-101-instructors-guide/"
+  },
+  "000-course-pages/overview/alignment-and-cultural-transmission": {
+    "title": "Alignment and Cultural Transmission",
+    "excerpt": "(a hall in a university town, perhaps 1450, on the eve of something)",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-and-cultural-transmission/"
+  },
+  "000-course-pages/overview/alignment-and-cultural-transmission-instructors": {
+    "title": "Alignment and Cultural Transmission (instructors)",
+    "excerpt": "(a hall in a university town, perhaps 1450, on the eve of something)",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-and-cultural-transmission-instructors/"
+  },
+  "000-course-pages/overview/alignment-and-neolithic-experts": {
+    "title": "Alignment and Neolithic Experts",
+    "excerpt": "Setting: a fireside council, somewhere in the late Neolithic, perhaps. The band has grown too large for everyone to know everything. A few individuals now hold knowledge the rest cannot check — the one who knows which mushrooms kill, the one who can find water, the one who says s",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-and-neolithic-experts/"
+  },
+  "000-course-pages/overview/alignment-and-neolithic-experts-instructors": {
+    "title": "Alignment and Neolithic Experts (instructors)",
+    "excerpt": "Setting: a fireside council, somewhere in the late Neolithic, perhaps. The band has grown too large for everyone to know everything. A few individuals now hold knowledge the rest cannot check — the one who knows which mushrooms kill, the one who can find water, the one who says s",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-and-neolithic-experts-instructors/"
+  },
+  "alignment-and-stuart-russell-in-2015": {
+    "title": "Alignment and Stuart Russell in 2015",
+    "excerpt": "So the first question is: what is a good decision, anyway? An economist will tell you that it means maximizing your expected utility over the whole future. And this applies to everything from lottery tickets to Davos meetings to building radio telescopes.",
+    "tags": [],
+    "url": "/HMIAwork/alignment-and-stuart-russell-in-2015/"
+  },
+  "alignment-and-the-first-experts": {
+    "title": "Alignment and the First Experts",
+    "excerpt": "Setting: a fireside council, somewhere in the late Neolithic, perhaps. The band has grown too large for everyone to know everything. A few individuals now hold knowledge the rest cannot check — the one who knows which mushrooms kill, the one who can find water, the one who says s",
+    "tags": [],
+    "url": "/HMIAwork/alignment-and-the-first-experts/"
+  },
+  "alignment-and-the-transmission-of-knowledge": {
+    "title": "Alignment and the Transmission of Knowledge",
+    "excerpt": "(a hall in a university town, perhaps 1450)",
+    "tags": [],
+    "url": "/HMIAwork/alignment-and-the-transmission-of-knowledge/"
+  },
+  "000-course-pages/overview/alignment-c1620": {
+    "title": "Alignment c1620",
+    "excerpt": "The setting: London, around 1620. Joint-stock companies are two decades old — the East India Company chartered in 1600, the Dutch VOC (Vereenigde Oostindische Compagnie, or Dutch East India Company) in 1602 — and they're already doing things no individual merchant could. Edward C",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-c1620/"
+  },
+  "000-course-pages/overview/alignment-c1620-instructors": {
+    "title": "Alignment c1620 (instructors)",
+    "excerpt": "The setting: London, around 1620. Joint-stock companies are two decades old — the East India Company chartered in 1600, the Dutch VOC (Vereenigde Oostindische Compagnie, or Dutch East India Company) in 1602 — and they're already doing things no individual merchant could. Edward C",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-c1620-instructors/"
+  },
+  "alignment-circa-1620": {
+    "title": "Alignment Circa 1620",
+    "excerpt": "The setting: London, around 1620. Joint-stock companies are two decades old — the East India Company chartered in 1600, the Dutch VOC (Vereenigde Oostindische Compagnie, or Dutch East India Company) in 1602 — and they're already doing things no individual merchant could. Edward C",
+    "tags": [],
+    "url": "/HMIAwork/alignment-circa-1620/"
+  },
+  "000-course-pages/overview/alignment-fireside-chats-instructors": {
+    "title": "Alignment Fireside Chats (instructors)",
+    "excerpt": "Set up readings and 2 story comparison as pre-class work. Classroom discussion draws on student work to fill in entire grid. We watch and read Russell's talk and add fifth column (after clarifying some vocabulary, perhaps). Then formulate discussion questions to be debated in gro",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-fireside-chats-instructors/"
+  },
+  "000-course-pages/overview/alignment-in-the-beginning": {
+    "title": "Alignment in the Beginning",
+    "excerpt": "Setting: a band of anatomically modern humans, somewhere near the beginning. The tools are old, but something new has arrived: everyone around this fire can imagine, plan, and pretend. Which means everyone around this fire has just become, to everyone else, both the most valuable",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-in-the-beginning/"
+  },
+  "000-course-pages/overview/alignment-in-the-beginning-instructors": {
+    "title": "Alignment in the Beginning (instructors)",
+    "excerpt": "Setting: a band of anatomically modern humans, somewhere near the beginning. The tools are old, but something new has arrived: everyone around this fire can imagine, plan, and pretend. Which means everyone around this fire has just become, to everyone else, both the most valuable",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/alignment-in-the-beginning-instructors/"
+  },
+  "handoff-docs-from-cowork/alignmenttalks": {
+    "title": "alignment talks",
+    "excerpt": "Russell's beats, for reference: good decisions = maximizing expected utility → rapid capability progress → commercial investment → the misspecified-objective problem (paperclips, King Midas, Google car) → value misalignment × superintelligence = serious problem → skeptics rebutte",
+    "tags": [],
+    "url": "/HMIAwork/handoff-docs-from-cowork/alignmenttalks/"
+  },
+  "alignment-way-way-back": {
+    "title": "Alignment Way Way Back",
+    "excerpt": "Setting: a band of anatomically modern humans, somewhere near the beginning. The tools are old, but something new has arrived: everyone around this fire can imagine, plan, and pretend. Which means everyone around this fire has just become, to everyone else, both the most valuable",
+    "tags": [],
+    "url": "/HMIAwork/alignment-way-way-back/"
+  },
+  "000-course-pages/alignment101": {
+    "title": "Alignment101",
+    "excerpt": "Contents of the Alignment101 folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/alignment101/"
+  },
+  "000-course-pages/00-wiki/amodei-machines-of-loving-grace-peace-and-governance": {
+    "title": "Amodei Machines of Loving Grace Peace and Governance",
+    "excerpt": "AI Summary (edited) Amodei argues that even if AI solves disease, poverty, and inequality, it won't automatically solve human conflict, since AI is a dual-use tool that can strengthen autocrats (via propaganda and surveillance) as easily as democracies — so preserving and extendi",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/00-wiki/amodei-machines-of-loving-grace-peace-and-governance/"
+  },
+  "000-course-pages/00-wiki/asimovs-three-laws": {
+    "title": "Asimov's Three Laws",
+    "excerpt": "The Three Laws, presented to be from the fictional \"Handbook of Robotics, 56th Edition, 2058 A.D.\", are:1(https://en.wikipedia.org/wiki/ThreeLawsofRoboticscitenote-IROBOT-1)",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/00-wiki/asimovs-three-laws/"
+  },
+  "000-course-pages/assignments": {
+    "title": "Assignments",
+    "excerpt": "Contents of the Assignments folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/assignments/"
+  },
+  "000-course-pages/just-make-good-agents/claudes-checkpoint-20260818": {
+    "title": "Claude's Checkpoint 20260818",
+    "excerpt": "Working instructor meditation doc, not yet split into student-facing material. Captures the current state of the hook, the synoptic overview, and the roommate/robot exercise as of the design conversation on 2026-08-18. Primary working copy may also be maintained in Obsidian — tre",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/just-make-good-agents/claudes-checkpoint-20260818/"
+  },
+  "000-course-pages/how-to-read/concrete-problems-instructor-notesclaude": {
+    "title": "concrete problems instructor notes(Claude)",
+    "excerpt": "Companion to concrete-problems-worked-example(Claude) (the model walkthrough) and the student worksheet concrete-problems-worksheet.pdf (the fillable handout). This is the answer key plus facilitation notes — not something to hand out.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/how-to-read/concrete-problems-instructor-notesclaude/"
+  },
+  "000-course-pages/how-to-read/concrete-problems-worked-exampleclaude": {
+    "title": "concrete problems worked example(Claude)",
+    "excerpt": "Do Pass 1 and Pass 2 on Concrete Problems in AI Safety before our next session — that's roughly 15 minutes. Come with: the paper's one-sentence claim, the five problems and their three-way grouping, and one section you'd choose to go deep on and why.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/how-to-read/concrete-problems-worked-exampleclaude/"
+  },
+  "000-course-pages/just-make-good-agents/ethics-101-instructors": {
+    "title": "Ethics 101 (instructors)",
+    "excerpt": "This module/session introduces students to landscape and terminology of ethics. Most people have a mix of intuitions and previous exposure. We aren't trying to be exhaustive or even philosophically foundational; rather, we want to bring some order to our thinking.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/just-make-good-agents/ethics-101-instructors/"
+  },
+  "fireside-chats-about-four-alignment-moments": {
+    "title": "Fireside Chats about Four Alignment Moments",
+    "excerpt": "We present a scaffolding for identifying analogical patterns. 1. What is the opening question, and what does it define as \"good\"? 2. What form does intelligence take here, and who holds it? 3. Where does the problem live? 4. What can't be checked, tested, or fully written down? 5",
+    "tags": [],
+    "url": "/HMIAwork/fireside-chats-about-four-alignment-moments/"
+  },
+  "000-course-pages/assignments/group-order-readings": {
+    "title": "group order readings",
+    "excerpt": "A wide-net list for the fourth \"solution\" in the social order segment — order produced neither by shared inner meaning, nor by price, nor by command, but by people watching, gossiping about, and sanctioning each other. Organized in clusters so you can pull a spine of three or fou",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/assignments/group-order-readings/"
+  },
+  "handoff-docs-from-cowork/handoff": {
+    "title": "HANDOFF",
+    "excerpt": "1. Three \"Russell-analog\" talks (full texts in alignmenttalks.md). Starting from Stuart Russell's 2015 value-alignment talk (paperclips, King Midas, Rutherford/Szilard, fusion-containment, inverse RL), we composed historical analogues, regressing in time:",
+    "tags": [],
+    "url": "/HMIAwork/handoff-docs-from-cowork/handoff/"
+  },
+  "handoff-docs-from-cowork": {
+    "title": "HANDOFF DOCS FROM COWORK",
+    "excerpt": "Contents of the HANDOFF DOCS FROM COWORK folder.",
+    "tags": [],
+    "url": "/HMIAwork/handoff-docs-from-cowork/"
+  },
+  "index": {
+    "title": "HMIA Work",
+    "excerpt": "We start with four \"Fireside Chats about Four Alignment Moments\" (a few of them literally so). The goal is for students to \"discover\" an array of important alignment concepts and we finish by asking how these get tweaked when a new kind of agent with different natural limits ente",
+    "tags": [
+      "hmia",
+      "placeholder"
+    ],
+    "url": "/HMIAwork/index/"
+  },
+  "000-course-pages/how-to-read": {
+    "title": "How To Read",
+    "excerpt": "Contents of the How To Read folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/how-to-read/"
+  },
+  "000-course-pages/how-to-read/how-to-read-an-ai-paper": {
+    "title": "how to read an ai paper",
+    "excerpt": "A short guide for scanning and understanding papers you'll find on arXiv. Worked example: Amodei, Olah, Steinhardt, Christiano, Schulman & Mané, \"Concrete Problems in AI Safety\" (2016).",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/how-to-read/how-to-read-an-ai-paper/"
+  },
+  "000-course-pages/how-to-read/how-to-read-an-ai-paperclaude": {
+    "title": "how to read an ai paper(Claude)",
+    "excerpt": "A short guide for scanning and understanding papers you'll find on arXiv.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/how-to-read/how-to-read-an-ai-paperclaude/"
+  },
+  "000-course-pages/just-make-good-agents": {
+    "title": "Just Make Good Agents",
+    "excerpt": "Contents of the Just Make Good Agents folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/just-make-good-agents/"
+  },
+  "000-course-pages/alignment101/lyman-scott-1968-accounts-1": {
+    "title": "Lyman & Scott 1968 Accounts 1",
+    "excerpt": "- Describes the nature of accounts as statements made to explain untoward behavior and bridge the gap between actions and expectations. - Presents a classification of accounts by content as excuses and justifications, each with its own subtypes. - Discusses how excuses and justif",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/alignment101/lyman-scott-1968-accounts-1/"
+  },
+  "ai-101-materials/lysk-ai": {
+    "title": "LYSK AI",
+    "excerpt": "To be written",
+    "tags": [],
+    "url": "/HMIAwork/ai-101-materials/lysk-ai/"
+  },
+  "lysk-alignment": {
+    "title": "LYSK Alignment",
+    "excerpt": "To be written",
+    "tags": [],
+    "url": "/HMIAwork/lysk-alignment/"
+  },
+  "lyskinstructorguide": {
+    "title": "LYSK instructor guide",
+    "excerpt": "LYSK Social Science • Least You Should Know",
+    "tags": [],
+    "url": "/HMIAwork/lyskinstructorguide/"
+  },
+  "000-course-pages/just-make-good-agents/machines-of-loving-grace-peace-and-governance-debates-instructors": {
+    "title": "Machines of Loving Grace (peace and governance) Debates (instructors)",
+    "excerpt": "2. Is AI structurally neutral, or does it tilt toward one form of government? Amodei is explicit that he sees \"no strong reason\" AI will structurally favor democracy the way he thinks it will favor health, unlike his confidence elsewhere in the essay. Students can argue for the p",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/just-make-good-agents/machines-of-loving-grace-peace-and-governance-debates-instructors/"
+  },
+  "000-course-pages/overview": {
+    "title": "Overview",
+    "excerpt": "Contents of the Overview folder.",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/"
+  },
+  "000-course-pages/assignments/read-a-book": {
+    "title": "Read a Book",
+    "excerpt": "From a list Joseph Henrich, The Secret of Our Success (2015) 456 pages Robert Ellickson Order Without Law",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/assignments/read-a-book/"
+  },
+  "000-course-pages/overview/stuart-russell-2015-value-alignment-5m18s": {
+    "title": "Stuart Russell 2015 Value Alignment (5m18s)",
+    "excerpt": "<p style=\"text-align: center;\"<iframe title=\"YouTube video player\" src=\"https://www.youtube.com/embed/WvmeTaFcQw?si=pb-k0TWiWGa3lV7V\" width=\"560\" height=\"315\" loading=\"lazy\" allowfullscreen=\"allowfullscreen\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyrosc",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/overview/stuart-russell-2015-value-alignment-5m18s/"
+  },
+  "000-course-pages/ai101/understanding-fine-tuning": {
+    "title": "Understanding Fine Tuning",
+    "excerpt": "<p style=\"text-align: center;\"<img src=\"https://innoeduvation.org/images/AI-explainers/RLHF/transformer004.svg\"</p",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/ai101/understanding-fine-tuning/"
+  },
+  "000-course-pages/00-wiki/value-alignment": {
+    "title": "value alignment",
+    "excerpt": "aligning all your values (this is just a test entry!)",
+    "tags": [],
+    "url": "/HMIAwork/000-course-pages/00-wiki/value-alignment/"
+  },
+  "asset:concrete-problems-worksheet.pdf": {
+    "title": "concrete-problems-worksheet.pdf",
+    "excerpt": "PDF document",
+    "tags": [],
+    "url": "/HMIAwork/000 Course Pages/how-to-read/concrete-problems-worksheet.pdf"
+  },
+  "asset:lysk_instructor_guide.pdf": {
+    "title": "LYSK_instructor_guide.pdf",
+    "excerpt": "PDF document",
+    "tags": [],
+    "url": "/HMIAwork/LYSK_instructor_guide.pdf"
+  }
+}

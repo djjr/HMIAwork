@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alignment 101 (instructor&#39;s guide)</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>html, body { background: transparent; }</style>
+</head>
+<body>
+<main class="document-layout"><article><h3><strong>First Session</strong></h3>
+<p>We don&#39;t assume that we understand much more about alignment than everyday sense of &quot;AI being on our side&quot; or &quot;not a threat.&quot; Our goal for this module/session is to acquire a beginner&#39;s level appreciation of what AI scientists mean by the term.</p>
+<p><strong>Safety</strong>, <strong>alignment</strong>, <strong><a href="/HMIAwork/000-course-pages/00-wiki/value-alignment/" data-preview-slug="000-course-pages/00-wiki/value-alignment">value alignment</a></strong> as three initial concepts that layout a trajectory for thinking about things. Safety is the property we want (the system doesn&#39;t cause harm), alignment is the mechanism/relationship (the system&#39;s behavior tracks what you actually want), and value alignment narrows that further to a specific target — aligned to whose values, specified how.</p>
+<h4><strong>READINGS</strong></h4>
+<p>For first part of Alignment 101 we read the introduction and chapter 1 of Brian Christian&#39;s <a href="https://innoeduvation.org/danryan/library/Christian-B-2021-The-Alignment-Problem-(Intro-and-Ch1).pdf">The Alignment Problem</a>Here&#39;s the briefest outline:</p>
+<h4>Introduction</h4>
+<ol>
+<li><p><strong>Word2vec.</strong> ML can do amazing things with language, but representations reproduce social meanings<a href="https://cpb-us-e1.wpmucdn.com/sites.psu.edu/dist/0/110933/files/2022/08/Christian-Alignment-Problem-Intro-and-Ch1.pdf"></a></p>
+</li>
+<li><p><strong>COMPAS</strong> Learning human patterns matters much more in consequential decisions like bail, parole, hiring, etc. Technically correct can be ethically unacceptable. Tradeoffs.<a href="https://cpb-us-e1.wpmucdn.com/sites.psu.edu/dist/0/110933/files/2022/08/Christian-Alignment-Problem-Intro-and-Ch1.pdf"></a></p>
+</li>
+<li><p><strong>The alignment problem</strong>: how do we get systems to capture our intentions, norms, and values and do what we actually want? Present-day fairness/ethics problems linked to longer-run AI-safety concerns.</p>
+</li>
+<li><p><strong>Road map</strong> I: prediction and present-day systems. II: Reinforcement learning and agency III: Systems and complex human values.</p>
+</li>
+</ol>
+<h4>Chapter 1 — “Representation”</h4>
+<ol>
+<li><p><strong>Perceptron / origins.</strong> Rosenblatt et al.; weights, errors, learning from examples; recipe: architecture + training data + optimization.</p>
+</li>
+<li><p><strong>From shallow to deep networks.</strong> Limitations of perceptron limitations; multi layers learn useful <strong>representations;</strong>  Hinton/Krizhevsky/AlexNet and the deep-learning breakthrough.</p>
+</li>
+<li><p><strong>The problem: learning from examples means inheriting from examples.</strong> Google Photos misclassification (gorilla problem); algorithm works as designed but the training data/representation is bad.</p>
+</li>
+<li><p><strong>Not Just AI: Representation in photography.</strong> Shirley cards as a historical analogy; systems get calibrated against some implicit reference population. </p>
+</li>
+<li><p><strong>Fix the training set.</strong> Joy Buolamwini and Timnit Gebru; aggregate accuracy can conceal large subgroup disparities; &quot;accurate&quot; <strong>on whom?</strong></p>
+</li>
+<li><p><strong>Embeddings.</strong> Words as positions in a learned vector space; useful semantic structure emerges from trying to predict words from surrounding context.</p>
+</li>
+<li><p><strong>Dark side of embeddings.</strong> Learned representations also encode social stereotypes and historical inequalities; attempts to “debias” reveal deciding what counts as bias is itself a normative problem. </p>
+</li>
+<li><p><strong>Representation as mirror and intervention.</strong> Models can reveal measurable patterns in society; but when deployed, they also <strong>reinforce and change it</strong></p>
+</li>
+</ol>
+<p>So, <strong>alignment lesson zero</strong> is something like: &quot;We teach machines with real world data. Those data contain choices, omissions, and patterns from the world. When we use the resulting models to make decisions, description becomes prescription. There is no neutral representation of the world from which an aligned system simply follows.&quot;</p>
+<p>OR just &quot;<strong>Alignment problem, version zero:</strong> A machine can faithfully learn the world we give it and still produce outcomes we do not want.&quot;</p>
+<h4><strong>Activity/Exercise</strong></h4>
+<p>Individuals or groups have outline of reading with prompt to write a single declarative sentence that captures the takeaway.  Then these get written on board or google slides (one slide for each outline element so that the takeaways are written next to each other). Then we debate key points?</p>
+<p>Possible debate positions (teams are assigned positions).</p>
+<ol>
+<li>A predictive system should be judged only by whether its predictions are accurate.  </li>
+<li>If an algorithm reproduces existing social inequalities, the problem lies in society, not in the algorithm.  </li>
+<li>If a model accurately represents the world, we should not alter its representations merely because we dislike them.</li>
+</ol>
+<p>These form a sequence: performance → responsibility → intervention. Topic #2 has a hidden trap: even if the model is &quot;just a mirror,&quot; deploying the mirror as a decision rule changes the world. Cf &quot;description becomes prescription&quot; above.</p>
+<h3><strong>Second Session (Amodei et al.)</strong></h3>
+<p><em>Note: we might precede this session with &quot;How to read hard things&quot; (see <a href="https://jhu.instructure.com/courses/132093/quizzes/309654" title="How to Read Hard Stuff Pre-class Work">How to Read Hard Stuff Pre-class Work</a>, <a href="https://slides.com/djjr/hmia2025-how-to-read-hard-stuff">How to Read Hard Stuff Slides 2025</a>, <a href="https://jhu.instructure.com/courses/132093/assignments/1309526" title="Assignment 1 PostClass Work Concrete Problems of Your Human Intelligence">Assignment 1 PostClass Work Concrete Problems of Your Human Intelligence</a>) using Amodei et al. as the example. So we introduce reading research papers and how to get something out of it even if there are technical aspects that one is not yet ready to tackle.</em></p>
+<p>We heard about alignment and value alignment explicitly in Russell&#39;s 2015 WEF talk. Now we are reading Amodei et al. 2016 &quot;Concrete Problems in AI Safety&quot; and we get introduced to five concepts</p>
+<ul>
+<li><strong>Negative side effects</strong> — pursuing a literal objective while damaging things the objective didn&#39;t mention (vase-knocking-over framing works with no jargon needed, everyone gets it immediately).</li>
+<li><strong>Reward hacking</strong> — aka &quot;specification gaming.&quot; Our AI101 notebook introduced loss functions and training loops, so we can frame this as &quot;what happens when the thing you can measure and the thing you actually want come apart.&quot;</li>
+<li><strong>Scalable oversight</strong> — the mundane example is right in the classroom: the teacher can watch a few students but once the classroom gets large.... For AI, whether a human overseer can meaningfully supervise a system that&#39;s faster, more capable, or operating at a scale they can&#39;t fully inspect.</li>
+<li><strong>Safe exploration</strong> — Amodei&#39;s framing assumes RL-style learning, which AI101 didn&#39;t actually build. For now, we do a very light, non-technical treatment (&quot;systems that learn by acting in the world need to avoid catastrophic mistakes while still learning&quot;) with the RL apparatus deferred</li>
+<li><strong>Robustness to distributional shift</strong> — The pitch is &quot;trained on one slice of the world, deployed on a different one.&quot;</li>
+</ul>
+<p>Relatedly we have a few other intro concepts.</p>
+<p><strong>Instrumental convergence</strong> — many different top-level goals produce similar sub-goals (acquiring resources, resisting shutdown, self-preservation), independent of what the goal actually is.</p>
+<p><strong>Corrigibility / the off-switch problem</strong>. Do humans retain control?</p>
+<p><strong>Misalignment vs. misuse</strong> — is the harm coming from the system failing on its own terms, or from a human deliberately directing a working system to do harm. We emphasize this early because it keeps &quot;AI risk&quot; from collapsing into one undifferentiated fear.</p>
+<h4><strong>Activity/Exercise</strong></h4>
+</article></main>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>

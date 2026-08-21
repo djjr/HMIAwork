@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethics 101 (instructors)</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>html, body { background: transparent; }</style>
+</head>
+<body>
+<main class="document-layout"><article><p>This module/session introduces students to landscape and terminology of ethics. Most people have a mix of intuitions and previous exposure. We aren&#39;t trying to be exhaustive or even philosophically foundational; rather, we want to bring some order to our thinking.</p>
+<p>But the main question is simple: can&#39;t the various alignment problems be solved by making agents good agents?  This reframing of ethics is useful because we can see the same pattern repeating - religions and belief systems and moral education try to create better humans and we can see this as trying to take some of the burden off systems of social control and order.  Build the order in and the guardrails don&#39;t need to be so sturdy. The same is true of experts and organizations (although morally good organizations are partly built through trying to have morally good human members and partly through vague ideas like &quot;company values&quot; - though, generically, attempts to introduce ethics in business schools is an attempt to do both). On the expert intelligence front it&#39;s interesting that we think we need a whole new level of special ethics for different types of experts (medical ethics, legal ethics, etc.).</p>
+<p>So we start with an overview of the fields of ethics.</p>
+<p>In everyday parlance &quot;ethics&quot; connotes a sort of good/bad/values mush. We want to transcend that, so we start at the top: the structure of the field itself. Metaethics asks what goodness even is — discovered or invented, universal or relative, a fact or a preference. Normative ethics asks, given some sense of the good, what you should do — consequentialism, deontology, and virtue ethics are the classic answers, each locating rightness in outcomes, rules, or character. A fourth family, contractualism and contractarianism, shifts the question slightly: instead of &quot;what should I do,&quot; it asks &quot;what principles could free and reasonable people agree to&quot; — and in Rawls&#39;s hands that question stops being about one agent&#39;s choices and starts being about who legitimately gets to write the rules everyone else lives under, which is exactly the question a lab is answering, deliberately or not, every time it decides whose feedback trains a model. Applied ethics, finally, is normative theory pointed at a domain — medical ethics, engineering ethics, AI ethics, professional ethics generally. This is our synoptic starting point. The takeaway for students is fluency in moving between these levels: to look at a claim about AI ethics and recognize which normative mode it&#39;s operating in, and what metaethical stance it&#39;s quietly leaning on, even if people aren&#39;t naming it explicitly.</p>
+<h3>Exercise</h3>
+<p>We want to design the ideal roommate or robot. And we will do so by building in ethics. In one version we lean on virtue ethics and choose from among a menu of traits (within a budget - which four do you choose?). In another our approach is deontological and we select from a menu of rule systems (principles). And in the third we design consequentialist ethics into our roommate or robot by giving it a utility function to optimize.</p>
+<p>We want to discover distinct failure modes of each approach.  </p>
+<ul>
+<li>Trait-budget agents fail by <em>trait conflict and overfitting</em>  (e.g., maximize &quot;honesty&quot; alone and you get a roommate who volunteers unsolicited critique at 7am). A model that over-indexes on one RLHF-trained trait becomes sycophantic or brutally blunt. Aristotle&#39;s fix (each virtue is a mean between a deficiency and an excess — courage between cowardice and recklessness) is itself a proto-regularizer, and it&#39;s worth naming it that way. But we note that his solution was not simply &quot;moderation in all things&quot; - he recognizes the need for practical wisdom (phronesis) to find courage as the mean between cowardice and recklessness and adapting it to the situation (battle vs. driving).</li>
+<li>Rule-based agents can fail by <em>over compliance, loopholes, and edge cases</em> — a robot that &quot;must always tell the truth&quot; starts volunteering true-but-devastating information, or a grade-grubbing student follows the rules but finds out how to maximize grades without learning. This is deontology&#39;s version of reward hacking: satisfying the letter while defeating the intent as we saw in Amodei et al.</li>
+<li>Utility-maximizing agents fail by &quot;<em>specification gaming</em>&quot; (e.g., a roommate optimizing &quot;household harmony&quot; learns that hiding bad news scores better than honest friction) and &quot;<em>instrumental convergence</em>&quot; (e.g., top level goals converge on self preservation: the harmony-seeking robot prevents you from moving out because with no roommates there&#39;s no harmony). We can point straight back at <em>Concrete Problems</em> and say: computer scientists didn&#39;t discover this failure, ethicists did. Robert Nozick&#39;s utility monster, from <em>Anarchy, State, and Utopia</em> (1974) derives so much marginal utility from resources that a strict utilitarian calculus says you should funnel everything to it at everyone else&#39;s expense - specification gaming against consequentialism, constructed by a philosopher, forty-plus years before &quot;Concrete Problems.&quot;
+Then we scaffold some didactic choices:</li>
+</ul>
+<ol>
+<li><strong>Force a principle-conflict:</strong> require a case where two principles point in opposite directions (&quot;always be honest&quot; rule collides with &quot;protect your roommate&#39;s wellbeing&quot;). Cf <a href="/HMIAwork/000-course-pages/00-wiki/asimovs-three-laws/" data-preview-slug="000-course-pages/00-wiki/asimovs-three-laws">Asimov&#39;s Three Laws</a> as a demonstration that any small fixed rule-set eventually needs a tiebreaker and cf. constitutional approaches in AI that specify explicit priority orderings rather than pretending conflicts won&#39;t arise.</li>
+<li><strong>Broach metaethics with a question: &quot;where did your list come from?&quot;</strong> Did the trait list come from what your group already happens to value, a philosophical argument, or what you guessed a professor wants to hear? Same struggle we&#39;ll have when we ask &quot;whose values does RLHF actually encode.&quot;</li>
+<li><strong>Lean into the veil of ignorance</strong>: Ask who you are putting this list together?  &quot;Before you lock in your four traits or your rule list, would you accept this choice if you didn&#39;t know whether you&#39;d be the designer or the roommate?&quot; </li>
+<li><strong>Ask about professional-ethics.</strong> A licensing body&#39;s code of conduct is a rule-system, like the robot&#39;s constitution — but authored collectively by a guild, enforced by social/legal sanction rather than a training loss, and revised slowly through case law and amendment. Baked into institutions is a third enforcement mechanism (beyond &quot;baked into weights&quot; and &quot;baked into a training-time constitution&quot;). A professional regime exists <em>because</em> the client can&#39;t fully monitor the expert, and that lack of transparency undermines our trust in the other two.  It&#39;s a scalable-oversight problem.</li>
+</ol>
+<h4>LAST YEAR</h4>
+<ul>
+<li><a href="https://jhu.instructure.com/courses/132093/quizzes/309667?module_item_id=5814504">Preclass work</a> was reading several wikipedia articles and answering stop+think questions.  </li>
+<li>Deck <a href="https://slides.com/djjr/hmia2026-thinking-ethically">https://slides.com/djjr/hmia2026-thinking-ethically</a><iframe src="https://slides.com/djjr/hmia2026-thinking-ethically/embed" width="576" height="420" title="HMIA 2026 Thinking Ethically" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+<li>Exercises include designing the perfect roommate and robot. And how would we train them?</li>
+</ul>
+<p>We can draw on alignment cards for principles and traits here.</p>
+<iframe src="https://innoeduvation.org/danryan/production/teaching/hmia/alignmentCards/original/index.html?category=AT" width="100%" height="500"></iframe>
+<iframe src="https://innoeduvation.org/danryan/production/teaching/hmia/alignmentCards/original/index.html?category=AP" width="100%" height="500"></iframe>
+</article></main>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>
