@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alignment 101 (instructor&#39;s guide) · HMIA Course Pages</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="site-shell site-shell--bare"><main class="document-layout"><article><div class="doc-meta"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/HMIAwork/alignment101/">Alignment101</a> <span class="crumb-sep" aria-hidden="true">›</span> <span class="crumb-current">Alignment 101 (instructor&#39;s guide)</span></nav><div class="tag-list"><a class="tag-pill" href="/HMIAwork/tags/2/">#2</a></div></div><h3><strong>First Session</strong></h3>
+<p>We don&#39;t assume that we understand much more about alignment than everyday sense of &quot;AI being on our side&quot; or &quot;not a threat.&quot; Our goal for this module/session is to acquire a beginner&#39;s level appreciation of what AI scientists mean by the term.</p>
+<p><strong>Safety</strong>, <strong>alignment</strong>, <strong><a href="/HMIAwork/00-wiki/value-alignment/" data-preview-slug="00-wiki/value-alignment">value alignment</a></strong> as three initial concepts that layout a trajectory for thinking about things. Safety is the property we want (the system doesn&#39;t cause harm), alignment is the mechanism/relationship (the system&#39;s behavior tracks what you actually want), and value alignment narrows that further to a specific target — aligned to whose values, specified how.</p>
+<h4><strong>READINGS</strong></h4>
+<p>For first part of Alignment 101 we read the introduction and chapter 1 of Brian Christian&#39;s <a href="https://innoeduvation.org/danryan/library/Christian-B-2021-The-Alignment-Problem-(Intro-and-Ch1).pdf">The Alignment Problem</a>.  Here&#39;s the briefest outline:</p>
+<h4>Introduction</h4>
+<p>Christian&#39;s introduction does what an introduction needs to do: provide a few whiz-bam concrete examples (Word2vec and COMPAS - you should be able to say what these are and why they matter), naming the big idea in the book (the alignment problem), and then telling you about the plan of the book (note that you can begin to infer what you&#39;d get out of reading the whole thing from this!).</p>
+<p>STOP+RECALL. What does he tell us about word2vec? 
+Google researchers had come up with a way to represent words with vectors. Another way to think of that is that each word is represented by a point in a high dimensional vector space. It was an application of &quot;unsupervised learning&quot; - they simply put text in and asked the machine to predict words based on context. As we know, you can do arithmetic with vectors A-B=C creates vector C as the element by element difference between vectors A and B. A good researcher noticed you could do provocative math like subtract the vector for man from the vector for doctor and then add the vector for woman and you got the vector for nurse.</p>
+<p>STOP+RECALL. What was the COMPAS story? The justice system wants to be efficient. When an accused person is waiting for trial a decision needs to be made about whether they should be released pending trial or held in custody. The policy was to make this decision based on an assessment of risk - is this person likely to offend again before trial? are they likely to be a violent offender? A company sold a product called Correctional
+Offender Management Profiling for Alternative Sanctions (COMPAS) that looked at a set of data items about a person and then returned a 1-10 risk score. Some journalists managed to get some before and after data - two years of data and the risk scores that were computed AND the actual record of whether the individuals had re-offended. They compared data points and found that (1) white and black individuals with similar histories got very different risk scores, and (2) sometimes low risk defendants DID reoffend while similar high risk defendants stayed clean. Their article in Pro Publica set off some big debates about algorithmic risk assessment and the concept of fairness.</p>
+<p>STOP+RECALL. What is Dario&#39;s boat? At NeurIPS 2016 Dario Amodei, now head of Anthropic but then head of the safety team at OpenAI. They had been training an AI to play video games. He was looking at a video from a game called <a href="http://www.kongregate.com/games/longanimals/coast-runners">CoastRunners</a>. <sup class="footnote-ref">1</sup><aside class="sidenote" id="fn-1"><span class="footnote-ref">1</span> See OpenAI 2016 <a href="https://openai.com/index/faulty-reward-functions/">&quot;Faulty reward functions in the wild&quot;</a></aside> The boat was turning donuts in the harbor crashing into things and setting boats on fire but collecting a massive amount of points.The machine had found a loophole in the game - a little harbor where it could rack up points forever. The point of the game is to finish the race but they had trained the model to get the most points and, well, you get what you asked for.</p>
+<p>These three examples map onto three big paradigms of machine learning: unsupervised learning, supervised learning, and reinforcement learning. And they demonstrate three problems - models learn everything including bias that exists in the real world; assessing whether or not we like how algorithmic tools work is not easy; specifying what you want algorithmic tools to do is not easy.</p>
+<p>After the concrete examples to get our attention, Christian tells us what the book is about: <strong>The alignment problem</strong>: how do we get systems to capture our intentions, norms, and values and do what we actually want? </p>
+<ol>
+<li><p><strong>Word2vec.</strong> ML can do amazing things with language, but representations reproduce social meanings<a href="https://cpb-us-e1.wpmucdn.com/sites.psu.edu/dist/0/110933/files/2022/08/Christian-Alignment-Problem-Intro-and-Ch1.pdf"></a></p>
+</li>
+<li><p><strong>COMPAS</strong> Learning human patterns matters much more in consequential decisions like bail, parole, hiring, etc. Technically correct can be ethically unacceptable. Tradeoffs.<a href="https://cpb-us-e1.wpmucdn.com/sites.psu.edu/dist/0/110933/files/2022/08/Christian-Alignment-Problem-Intro-and-Ch1.pdf"></a></p>
+</li>
+<li><p><strong>The alignment problem</strong>: how do we get systems to capture our intentions, norms, and values and do what we actually want? Present-day fairness/ethics problems linked to longer-run AI-safety concerns.</p>
+</li>
+<li><p><strong>Road map</strong> I: prediction and present-day systems. II: Reinforcement learning and agency III: Systems and complex human values.</p>
+</li>
+</ol>
+<p>Chapter 1 gives us some history. We&#39;ll talk about perceptrons and deep networks in week 4 so we won&#39;t belabor them here. Instead, let&#39;s remind ourselves of what the rest of the chapter touched on: <a href="https://geektechstuff.com/2025/06/05/artificial-intelligence-what-is-the-gorilla-problem/">gorilla problem</a>, <a href="https://www.nga.gov/stories/articles/shirley-card-legacy-artists-correcting-photographys-racial-bias">Shirley cards</a>, <a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">Gender Shades</a> (see also <a href="http://gendershades.org/">gendershades.org</a>), more on embeddings and debiasing, and representations as mirror and intervention.</p>
+<p>STOP+RECALL. What was the gorilla problem? &quot;This is 100% Not OK.” Google&#39;s photo captioning system labeled a photo of dark skinned humans as gorillas. Google fixed the problem, but how? “Google Images ‘Racist Algorithm’ Has a Fix But It’s Not a Great One.”  Two important take aways. One is this was not a mistake of the algorithm. We thought we were training a model to accurately caption photographs according to their content. But really what we were doing was training a model to label photographs they way photographs have been labeled before. And there were two problems. One is that there is a lot of racist iconography in the historical record - in the training data. And two, there is are missing exemplars in the &quot;acceptable data&quot; because the technology of photography systematically omitted darker skinned humans from accurate representation. Think about how a camera works - light reflects off real objects and gets interpreted chemically or electronically and then mapped to displayed colors on film or screen. Such systems need to be calibrated to insure accuracy. STOP+RECALL. What is the Shirley Card? For a long time the standard face used for calibration in film and video was a &quot;color girl&quot; and the girl was always white. The tech companies improved their ability to reproduce dark colors in the 60s but even then it wasn&#39;t about people it was about furniture and chocolate.</p>
+<p>So what&#39;s the common thread here? For classification to work, you need a lot of correct examples. They note that if you have lots of pictures of apples but they are always red apples then when you see a green apple you think it is a pear.</p>
+<p>We see the history repeat itself around 2010s.  STOP+RECALL. Georgia Tech student Joy Buolamwini notices that social robots can&#39;t recognize black faces. Here we go again.</p>
+<p>A 2007 article identified an underlying fact that made these problems more serious still. When these problems are built into software and software gets shared over the internet &quot;bias&quot; can travel across space and time. </p>
+<p>A reminder of how this works. Lots of labeled images (image + category). The image is a long vector of pixels. The model digests that vector and produces a set of probabilities over the possible categories. Either top result or we sample from the distribution. What we mean by that is that we pick a random number and use that to select result based on probabilities we computed.</p>
+<p>Around this time we start to get training-data archaeology: inspecting training data sets for sources of bias. Sample results: 2 x more photos of George Bush than black women. And this is true in lots of open data sets that lots of people use for training models. Buolamwini and Timnit Gebru curated the parlimentarians dataset as an eval data set. Why was it good? It had very little variation in things that didn&#39;t matter, and solid variation in things that did (race and gender in this case). They tested facial recognition software using this data and found error rates differed between male and female and between white and nonwhite and that these variables compounded - being both non-white and non-male was worse than either one alone. (BTW, this is an example of what is meant in the social sciences by the term &quot;intersectionality&quot; that&#39;s so often trashed these days). So this is tale one: you have to curate training data if you are going to reduce bias (where by bias we mean the system performs more or less well depending on variables that we don&#39;t think that should be true of).</p>
+<h6>Dark Side of Embeddings (or Analogies as Yard Sticks)</h6>
+<p>We won&#39;t belabor the technology of embeddings here (that comes in week 4). Suffice it to say we can use machine learning to arrange words in meaning space or semantic space. You might have dimensions like sweet-sour and hot-cold and represent vector(lemon juice) = (8,4), vector(ice cream) = (-8, 8), vector(pepper soup) =as= (8,-8), and vector(warm donuts) = (-6,-5).</p>
+<p>Now with vectors you can add and subtract so (a,b) - (c,d) = (a-c,b-d).  So we can imagine doing ice cream - warm donut = X = (-8 - -6, 8 - -5) = (-2,13) which a vector representation of the meaning &quot;slightly sweeter and much colder.&quot;</p>
+<p>Suppose we add this vector to pepper soup. What do we get? v(pepper soup) + X = (8+(−2), −8+13)=(6,5). That&#39;s something that&#39;s savory and cold. What could it be? Gazpacho!</p>
+<p>But when Bolukbasi carried out this same sort of &quot;learn a direction then use it to transport a word&quot; he gets things like man:woman::doctor:nurse. What&#39;s wrong with that? the difference vector now &quot;contains&quot; a stereotype. If my system recognizes &quot;jared&quot; as a man&#39;s name and &quot;penelope&quot; as a woman&#39;s name it might well rank jared&#39;s resume for a physician role ahead of penelope&#39;s.</p>
+<p>The obvious solution would be to suppress something like gender in the training data. Just like you might want me to grade blindedly so no personal bias comes through. STOP+RECALL. What was the procedural solution that a symphony tried to make auditions fairer? Have musicians perform behind a screen.</p>
+<p>But it turns out that you also have to get the musicians to take off their shoes because clicking heels sent the signal &quot;female&quot; to the judges.</p>
+<p>Humans can infer things from subtle clues and have stereotypes triggered. ML is absolutely designed to be able to do that. If any thing else in the data is correlated with the variable you try to suppress to debias your data, the machine will find it.</p>
+<p>What do we do about it? Our toy example lied about something. In actual embeddings you there are hundreds of dimensions and you can rarely &quot;read&quot; what one means. So the idea of just &quot;delete the gender dimension&quot; doesn&#39;t work. To solve the problem required some real interdisciplinary work and imagination.  There is a technique called Principal Component Analysis </p>
+<h4>Chapter 1 — “Representation”</h4>
+<ol>
+<li><p><strong>Perceptron / origins.</strong> Rosenblatt et al.; weights, errors, learning from examples; recipe: architecture + training data + optimization.</p>
+</li>
+<li><p><strong>From shallow to deep networks.</strong> Limitations of perceptron limitations; multi layers learn useful <strong>representations;</strong>  Hinton/Krizhevsky/AlexNet and the deep-learning breakthrough.</p>
+</li>
+<li><p><strong>The problem: learning from examples means inheriting from examples.</strong> Google Photos misclassification (gorilla problem); algorithm works as designed but the training data/representation is bad.</p>
+</li>
+<li><p><strong>Not Just AI: Representation in photography.</strong> Shirley cards as a historical analogy; systems get calibrated against some implicit reference population. </p>
+</li>
+<li><p><strong>Fix the training set.</strong> Joy Buolamwini and Timnit Gebru; aggregate accuracy can conceal large subgroup disparities; &quot;accurate&quot; <strong>on whom?</strong></p>
+</li>
+<li><p><strong>Embeddings.</strong> Words as positions in a learned vector space; useful semantic structure emerges from trying to predict words from surrounding context.</p>
+</li>
+<li><p><strong>Dark side of embeddings.</strong> Learned representations also encode social stereotypes and historical inequalities; attempts to “debias” reveal deciding what counts as bias is itself a normative problem. </p>
+</li>
+<li><p><strong>Representation as mirror and intervention.</strong> Models can reveal measurable patterns in society; but when deployed, they also <strong>reinforce and change it</strong></p>
+</li>
+</ol>
+<p>So, <strong>alignment lesson zero</strong> is something like: &quot;We teach machines with real world data. Those data contain choices, omissions, and patterns from the world. When we use the resulting models to make decisions, description becomes prescription. There is no neutral representation of the world from which an aligned system simply follows.&quot;</p>
+<p>OR just &quot;<strong>Alignment problem, version zero:</strong> A machine can faithfully learn the world we give it and still produce outcomes we do not want.&quot;</p>
+<h4><strong>Activity/Exercise</strong></h4>
+<p>Individuals or groups have outline of reading with prompt to write a single declarative sentence that captures the takeaway.  Then these get written on board or google slides (one slide for each outline element so that the takeaways are written next to each other). Then we debate key points?</p>
+<p>Possible debate positions (teams are assigned positions).</p>
+<ol>
+<li>A predictive system should be judged only by whether its predictions are accurate.  </li>
+<li>If an algorithm reproduces existing social inequalities, the problem lies in society, not in the algorithm.  </li>
+<li>If a model accurately represents the world, we should not alter its representations merely because we dislike them.</li>
+</ol>
+<p>These form a sequence: performance → responsibility → intervention. Topic #2 has a hidden trap: even if the model is &quot;just a mirror,&quot; deploying the mirror as a decision rule changes the world. Cf &quot;description becomes prescription&quot; above.</p>
+<h3><strong>Second Session (Amodei et al.)</strong></h3>
+<p><em>Note: we might precede this session with &quot;How to read hard things&quot; (see <a href="https://jhu.instructure.com/courses/132093/quizzes/309654" title="How to Read Hard Stuff Pre-class Work">How to Read Hard Stuff Pre-class Work</a>, <a href="https://slides.com/djjr/hmia2025-how-to-read-hard-stuff">How to Read Hard Stuff Slides 2025</a>, <a href="https://jhu.instructure.com/courses/132093/assignments/1309526" title="Assignment 1 PostClass Work Concrete Problems of Your Human Intelligence">Assignment 1 PostClass Work Concrete Problems of Your Human Intelligence</a>) using Amodei et al. as the example. So we introduce reading research papers and how to get something out of it even if there are technical aspects that one is not yet ready to tackle.</em></p>
+<p>We heard about alignment and value alignment explicitly in Russell&#39;s 2015 WEF talk. Now we are reading Amodei et al. 2016 &quot;Concrete Problems in AI Safety&quot; and we get introduced to five concepts</p>
+<ul>
+<li><strong>Negative side effects</strong> — pursuing a literal objective while damaging things the objective didn&#39;t mention (vase-knocking-over framing works with no jargon needed, everyone gets it immediately).</li>
+<li><strong>Reward hacking</strong> — aka &quot;specification gaming.&quot; Our AI101 notebook introduced loss functions and training loops, so we can frame this as &quot;what happens when the thing you can measure and the thing you actually want come apart.&quot;</li>
+<li><strong>Scalable oversight</strong> — the mundane example is right in the classroom: the teacher can watch a few students but once the classroom gets large.... For AI, whether a human overseer can meaningfully supervise a system that&#39;s faster, more capable, or operating at a scale they can&#39;t fully inspect.</li>
+<li><strong>Safe exploration</strong> — Amodei&#39;s framing assumes RL-style learning, which AI101 didn&#39;t actually build. For now, we do a very light, non-technical treatment (&quot;systems that learn by acting in the world need to avoid catastrophic mistakes while still learning&quot;) with the RL apparatus deferred</li>
+<li><strong>Robustness to distributional shift</strong> — The pitch is &quot;trained on one slice of the world, deployed on a different one.&quot;</li>
+</ul>
+<p>Relatedly we have a few other intro concepts.</p>
+<p><strong>Instrumental convergence</strong> — many different top-level goals produce similar sub-goals (acquiring resources, resisting shutdown, self-preservation), independent of what the goal actually is.</p>
+<p><strong>Corrigibility / the off-switch problem</strong>. Do humans retain control?</p>
+<p><strong>Misalignment vs. misuse</strong> — is the harm coming from the system failing on its own terms, or from a human deliberately directing a working system to do harm. We emphasize this early because it keeps &quot;AI risk&quot; from collapsing into one undifferentiated fear.</p>
+<h4><strong>Activity/Exercise</strong></h4>
+<p>Sample Work</p>
+<h1>Imperfect Decision-making</h1>
+<p><strong>An important use case for AI models is making decisions in organizations (applications, adjudications, etc.).</strong> </p>
+<p><strong>Offer a brief argument on both sides of this claim:</strong></p>
+<p><strong>“Even if a model or algorithm is biased or can be inaccurate, we should compare that to human decision-making rather than stop using the tool.”</strong>  </p>
+<p>YES: Even if models are biased, they might be less biased and more efficient than humans doing the same task.</p>
+<p>NO: If models reproduce bad decision-making that we would disapprove of in humans we should not be using models for that task.</p>
+<p>Anonymous 8nde1Sep 4 1:14pm</p>
+<p>YES It is hard to have a hard definition of what is right and what is wrong, even with humans. Models reflect what is currently defined as right or wrong, so even if humans did the task instead, they would also do the wrong thing.</p>
+<p>NO Unlike humans, machines do not stop what they are doing just because they are wrong. They don&#39;t have that human conscience and sense and will continuing do the wrong thing at high efficiency.</p>
+<p>Anonymous 8n9jzSep 4 2:48pm
+Yes : Models may still be more consistent, efficient, and less biased than human decision makers even if they are imperfect. </p>
+<p>No: Bias or errors in models can affect many people at scale. If the decisions are unfair or harmful, efficiency doesn&#39;t justify using them.
+Anonymous 8nldkSep 4 3:59pm</p>
+<p><strong>YES:</strong> Models can process far more cases consistently than humans and don&#39;t suffer from fatigue, mood, or individual prejudice, so a biased model may still outperform a biased human at scale. Comparing the tool to the realistic alternative (flawed human judgment), not to an impossible ideal of perfect fairness, is the fair standard.</p>
+<p><strong>NO:</strong> Automating a biased process gives it a false veneer of objectivity, making the bias harder to detect, question, or hold accountable than when a human makes the same call. Scaling up bad decision making through a model also means scaling up the harm to far more people than any individual human could affect.</p>
+<p>Anonymous 8nnftSep 4 5:12pm</p>
+<p>YES: We must remember that humans are biased so if we are able to make the model less biased, we should use the model rather than people. Even if it is imperfect, it could still help reduce bias. For example, we switched from horses to cars despite the danger of cars because cars provided a substantial benefit. Even if the algorithms are biased now, it could imrpvoe over time with more research into it. People could also use models as a tool to help reduce bias (not totally relying on it).</p>
+<p>NO: The Algorithm is not human so it is harder to blame someone when something goes wrong. The algorithm may increase bias more than a human even if it is at the exact same amount of bias since people might see the algorithm as more biased. Bias is in the training data so it will just go into the model.</p>
+<p>Anonymous 8no7vSep 4 6:24pm</p>
+<p>Yes:  Even if these systems aren&#39;t perfect, they can provide a unique and useful second opinion. We all have had situations where colleagues give ideas that may not be as good as what we had in mind, and where those new ideas are genuinely useful and expand the realm of possibilities we were considering. We of course shouldn&#39;t always take AI&#39;s opinions, but neglecting them because sometimes they can be wrong would be shooting ourselves in the foot.  </p>
+<p>No:  Listening to consistently biased or inaccurate information is extremely unproductive. A system that is capable of providing an output that we would disaprove of in humans should not be used to make decisions.</p>
+<p>Anonymous 8nqsfSep 4 10:16pm</p>
+<p>Yes.
+to some extent, such algo or model still can offer different perspective to human when human are making decisions.   </p>
+<p>no.
+when we create something, the example or say the training set is really important. If the example is wrong or false, we cannot create a relatively correct decision.</p>
+<p>Anonymous 8nbp0Sep 5 9:33am</p>
+<p>YES: Humans can also be biased and make mistakes. Even if a model isn&#39;t perfect, it could still be significantly faster and more consistent than humans, so we should compare them before making any final decisions.  </p>
+<p>NO: If a model makes unfair decisions we shouldn&#39;t just excuse it just because humans make mistakes too. If we wouldn&#39;t consider it apporpriate for a person why should a model have that privilege.</p>
+<p>Anonymous 8nsg4Sep 5 9:44am</p>
+<p>Yes: I agree with this side because humans carry hidden, inconsistent prejudices, whereas algorithms can be tuned and held to a clear benchmark to outperform our own flawed track record.</p>
+<p>No: I agree with this side because giving algorithms a pass just because humans also fail simply automates and excuses injustice, when we should demand that any deployed system actually meets ethical standards.</p>
+</article></main></div>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>
