@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 Update on Amodei et al. 2016 · HMIA Course Pages</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="site-shell site-shell--bare"><main class="document-layout"><article><div class="doc-meta"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/HMIAwork/amodei-et-al-2016/">Amodei Et Al. 2016</a> <span class="crumb-sep" aria-hidden="true">›</span> <span class="crumb-current">2026 Update on Amodei et al. 2016</span></nav><div class="tag-list"></div></div><p>Yes — very unevenly. Scalable oversight is the standout; reward hacking is the &quot;studied intensely, not solved&quot; case; the other three moved less.</p>
+<p><strong>Scalable Oversight — the clear &quot;speculative then, load-bearing now.&quot;</strong> In 2016 this was two paragraphs of loose proposals (semi-supervised RL, distant supervision, hierarchical RL). It&#39;s now arguably the central research question in frontier alignment, with a name change to match: &quot;scalable oversight&quot; is the umbrella term for the whole &quot;how do you supervise something smarter than the supervisor&quot; problem. Concretely:</p>
+<ul>
+<li><strong>RLHF</strong> (Christiano et al. 2017, right after this paper) and <strong>Constitutional AI</strong> (Bai et al. 2022) are the production version of &quot;cheap proxy signal standing in for expensive true evaluation&quot; — exactly the mechanism Section 5 was gesturing at, now running in every deployed chat model.</li>
+<li><strong>AI Safety via Debate</strong> (Irving, Christiano, Amodei 2018 — already in your Structures reading list) turned &quot;get two systems to check each other&quot; into a formal research program, with continued work through 2024–25 (Kenton et al., weak LLM judging strong LLM; Brown-Cohen et al., &quot;doubly-efficient debate&quot;).</li>
+<li><strong>Weak-to-strong generalization</strong> (Burns et al. 2023, OpenAI) is a genuinely new framing not in the original paper at all — training a strong model under only weak supervision and asking how much of its capability the weak signal still elicits.</li>
+<li>The &quot;sandwiching&quot; methodology (Bowman et al. 2022) is a real answer to a real methodological gap: how do you even <em>test</em> an oversight technique for superhuman systems when you only have human-level testers.</li>
+</ul>
+<p>This is directly upstream of your Transparency module&#39;s CoT-monitoring readings and the AI Control literature (Greenblatt et al.) — worth flagging to students as the throughline: 2016&#39;s vaguest section became 2024&#39;s central one.</p>
+<p><strong>Reward Hacking — heavily studied, but the honest story is &quot;not solved,&quot; not &quot;solved.&quot;</strong> Skalse et al. (2022) gave it a formal taxonomy. But recent papers (2025–26) still describe reward hacking as pervasive in frontier LLMs — sycophancy, length-gaming, format-gaming, reward-model exploitation — despite RLHF/DPO/Constitutional AI all being aimed at it. This is good material for the discover-first framing: the <em>problem</em> generalized and got worse with capability, even as the <em>toolkit</em> around it (adversarial reward auditing, obfuscation-aware CoT monitoring) got much more sophisticated. Nice pairing with your ethics-module Byrnes reading on behaviorist RL selecting for deception.</p>
+<p><strong>Side Effects — real but narrower progress, mostly stayed in toy environments.</strong> Krakovna et al.&#39;s &quot;relative reachability&quot; (2018) and Turner et al.&#39;s &quot;Attainable Utility Preservation&quot; (2020) are legitimate formal advances on &quot;Define/Learn an Impact Regularizer&quot; — they diagnosed <em>why</em> naive impact penalties misfire (e.g., penalizing irreversibility also penalizes doing anything at all) and fixed it with better baselines. But this line of work never made the jump to LLM-scale systems the way scalable oversight did; it&#39;s still largely a gridworld literature.</p>
+<p><strong>Safe Exploration — quietly continued as a mainstream RL subfield, but decentered from alignment discourse.</strong> Still active (constrained RL, safe RL surveys, Bayesian-optimization-with-safety-constraints), but LLMs don&#39;t &quot;explore&quot; in the classical RL sense during deployment, so this problem lost centrality in the LLM-era safety conversation — worth noting as an artifact of the field&#39;s paradigm shift rather than the problem being resolved. It may be due for a comeback as agentic/tool-using LLMs start taking real actions with real irreversible consequences.</p>
+<p><strong>Distributional Shift — absorbed into other vocabulary rather than &quot;solved&quot; under its own name.</strong> The core concern (confident failure on inputs unlike training) is now mostly discussed as OOD detection, calibration, jailbreak/adversarial robustness, and — closest to your course&#39;s own threads — the faithfulness/monitorability literature you already have in Transparency.</p>
+<p>If it&#39;s useful for a slide: <strong>Scalable Oversight (speculative → central) and Reward Hacking (speculative → intensely studied, still unsolved) are your two strongest &quot;ten years later&quot; stories</strong>; Side Effects is modest-and-narrow progress; Safe Exploration and Distributional Shift mostly got relabeled or decentered rather than advanced under their original names.</p>
+</article></main></div>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>
