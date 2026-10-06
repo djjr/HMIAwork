@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memo East side plow delays in the routing optimizer · HMIA Course Pages</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="site-shell site-shell--bare"><main class="document-layout"><article><div class="doc-meta"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/HMIAwork/ethics/">Ethics</a> <span class="crumb-sep" aria-hidden="true">›</span> <span class="crumb-current">Memo East side plow delays in the routing optimizer</span></nav><div class="tag-list"></div></div><h1>Memo: East-side plow delays in the routing optimizer</h1>
+<p>Oct 5, 2026 · @Dan Ryan</p>
+<p><strong>To:</strong> [Manager&#39;s name] <strong>From:</strong> Maya Chen <strong>Re:</strong> Plow-timing gap between east- and west-side streets</p>
+<p>I&#39;d like 30 minutes this week to talk through what I found in last winter&#39;s logs, because I think it needs action before the first snow, not in v2. I&#39;ve tried to lay out what I know, what I don&#39;t, and a plan that protects both Riverton residents and our relationship with the city. I may be missing context you have, and I want to hear it.</p>
+<h2>What I found</h2>
+<p>Last winter, east-side streets were cleared an average of 9 hours later than comparable west-side streets. The east-side neighborhoods have lower median incomes and more renters.</p>
+<p>West-side residents file about 3 times as many 311 requests per capita. Since 311 volume is one of the optimizer&#39;s two ranking inputs, that difference flows straight into plow priority.</p>
+<p>&#91;Add: how &quot;comparable&quot; was defined — e.g., matched on road class and traffic volume — number of streets and storms in the sample, and the spread around the 9-hour average.]</p>
+<h2>Why I think it happens</h2>
+<p>The model treats 311 requests as a measure of need, but they mostly measure who tends to call. Reporting rates are well known to vary with income, tenure, language, work schedules and trust in city government. Renters and shift workers are less likely to call even when their street is just as snowed in.</p>
+<p>This can also compound. Streets plowed earlier generate fewer complaints later in the storm, while streets left waiting may generate complaints that arrive after routes are already set. The result is a system that looks neutral but steadily routes service toward the people most likely to ask for it.</p>
+<h2>What I don&#39;t know yet</h2>
+<p>I haven&#39;t proven the 311 input causes the gap. Other factors could contribute, and I can test each in two or three days:</p>
+<ul>
+<li><strong>Depot location and route geometry.</strong> If trucks start on the west side, distance alone could explain part of the delay. I&#39;d control for travel time from the depot.</li>
+<li><strong>Road characteristics.</strong> Width, grade, parking density and on-street cars can slow clearing. I&#39;d compare streets matched on these.</li>
+<li><strong>Manual overrides.</strong> Dispatchers may have adjusted routes. I&#39;d check how often the plan was overridden and in which direction.</li>
+<li><strong>Counterfactual run.</strong> I&#39;d replay last winter&#39;s storms with the 311 weight removed or normalized and see how much of the 9 hours goes away.</li>
+</ul>
+<p>If the gap shrinks substantially in the replay, the model is the main driver. If it doesn&#39;t, we still learn something the city needs to know.</p>
+<h2>Why I don&#39;t think it can wait for v2</h2>
+<p>The first snow is forecast in about six weeks, and v2 won&#39;t be ready by then. Nine hours is the difference between getting to work or not, and between an ambulance reaching a house quickly or not. If we know the current model does this, running it again unchanged is a choice we&#39;re making.</p>
+<p>I also think staying quiet is the riskier path for GridPath. The pattern is visible in the city&#39;s own data. A council member, reporter or resident group could find it, and the first question would be when we knew. Learning that we found it and held it until after the renewal would do far more damage than the finding itself. The city may also have civil-rights obligations around equitable service that make this a legal question for them, not only a technical one.</p>
+<p>I understand the concern about timing. I just think the vote is exactly when being the vendor who catches its own problems is worth the most.</p>
+<h2>What I propose</h2>
+<ol>
+<li><strong>Validate (this week).</strong> I run the checks above and write up the results in two pages, including where I could be wrong.</li>
+<li><strong>Prepare an interim fix (weeks 2–4).</strong> Options that don&#39;t need a full v2 rebuild:<ul>
+<li>Normalize 311 counts by each area&#39;s historical reporting rate, so requests measure change from baseline rather than raw volume.</li>
+<li>Cap or reduce the 311 weight and lean more on traffic volume and road class.</li>
+<li>Add a coverage floor so no neighborhood waits more than a set number of hours behind the citywide average.</li>
+<li>Give fixed priority to bus routes, hospital and school access, and emergency corridors regardless of 311 volume.</li>
+</ul>
+</li>
+<li><strong>Tell the city, before the vote (by week 2).</strong> GridPath, not me personally, briefs our contact at Public Works: what we found, what we&#39;re still checking, and the fix we&#39;ll have in place before the first snow. We lead with the solution.</li>
+<li><strong>Monitor this winter.</strong> Report clearing times by neighborhood after each storm so the city can see the gap close.</li>
+</ol>
+<p>If you disagree with step 3, I&#39;d like to understand why. If we still see it differently, I&#39;d ask that we bring the question to [your manager / our ethics or legal contact] together, so the decision is made with everyone&#39;s eyes open.</p>
+<h2>Next step</h2>
+<p>I&#39;m proud of what we&#39;ve built for Riverton, and I want the renewal to go well. I think it goes best if we walk in with this already in hand. Could we meet this week? I&#39;ll bring the analysis and can start validation immediately.</p>
+<p>— Maya</p>
+</article></main></div>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>

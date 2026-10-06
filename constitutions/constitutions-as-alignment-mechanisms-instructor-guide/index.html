@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constitutions as Alignment Mechanisms (instructor guide) · HMIA Course Pages</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="site-shell site-shell--bare"><main class="document-layout"><article><div class="doc-meta"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/HMIAwork/constitutions/">Constitutions</a> <span class="crumb-sep" aria-hidden="true">›</span> <span class="crumb-current">Constitutions as Alignment Mechanisms (instructor guide)</span></nav><div class="tag-list"><a class="tag-pill" href="/HMIAwork/tags/51/">#51</a></div></div><p>Last year we did not explicitly say &quot;constitution,&quot; relying instead on the category &quot;Structures and Institutional Design.&quot; Interestingly, that material really was about structures and not character which seems a big element in AI constitutions.</p>
+<p>Let&#39;s start generically - across our four domains, one approach to alignment is to write down some foundational ideas and treat them as a fixed reference. Necessary properties are general enough to apply to novel situations, firm enough to not drift, etc. People do it with ground rules (and religious edicts, holy books, covenants), organizations do it with mission statements and policy books, experts have codes and such.</p>
+<p>Structures vs character theme throughout.</p>
+<p>Connecting back, a constitution is an attempt to manufacture and materialize the generalized other. It tells you how the world will respond. It&#39;s the normative handbook.</p>
+<h4>Approach</h4>
+<p>Build off our ethics conversation where we asked whether we could <a href="/HMIAwork/just-make-good-agents/ethics-101-instructors/" data-preview-slug="just-make-good-agents/ethics-101-instructors">just make good agents</a>.  We did an exercise there where we designed the ideal roommate or robot. Maybe we start Federalist 51 as an argument for a certain kind of constitution with attention paid to the premise that we are building something that will be &quot;staffed&quot; by imperfect, unaligned agents and so that forms our starting point.</p>
+<p>Then we read (at least parts of) <a href="https://www.anthropic.com/news/claude-new-constitution">Claude’s Constitution by Anthropic</a>. 
+Initial debate on whether a constitution that&#39;s about &quot;character&quot; seems to be solving the same problem in the same way as &quot;human&quot; constitutions.</p>
+<ol>
+<li>Resolved: By grounding itself in character development the Claude constitution abandon&#39;s Madison&#39;s core insight</li>
+</ol>
+<p>And then reading excerpt from T Chiang&#39;s <a href="https://laltromondo.amusewiki.org/testi/lifecycle/lifecycle_a4.pdf">The Lifecycle of Software Objects</a> - where question is whether good agents are &quot;raised&quot; or &quot;built&quot; (and even whether any text-based approach can work). Does Chiang&#39;s critique of text-based character-formation also indict Federalist 51? (probably not since Madison wasn&#39;t trying to play the character building game) How does Chiang&#39;s critique relate back to our roommate/robot design exercise?  Was our choose traits/principles from a menu with a budget the sort of short cut Chiang doesn&#39;t like? Are our failure modes there (overfitting, trait conflict and ordering, for example) descriptions of what happens when you skip the &quot;raising&quot;?</p>
+<p>Then Caputo&#39;s &quot;<a href="https://modelconstitution.com/p/ai-constitutions-are-real-constitutions">AI Constitutions are Real Constitutions.</a>&quot; And perhaps? structure debate around resolutions like these (note two different takes here (1) is &quot;are constitutions even apt for AI?&quot; and (2) &quot;what kind of things do and don&#39;t work? (or &quot;where does analogy yield dis-analogy?&quot;)):</p>
+<ol>
+<li>Resolved: AI constitutions should be treated as real constitutions, not corporate policy documents.</li>
+<li>Resolved: Madison&#39;s solution (ambition counteracting ambition) cannot be engineered into a single AI system.</li>
+</ol>
+<p>If we also look at the OpenAI <a href="https://model-spec.openai.com/2026-08-18.html">Model Spec</a>, perhaps we could follow Caputo and compare Claude as legal interpretivism (principles-first) and Model Spec as case-based reasoning (rules-plus-precedent) and try to relate it back to deontology-vs-virtue-ethics vs phronesis material in <a href="/HMIAwork/just-make-good-agents/ethics-101-instructors/" data-preview-slug="just-make-good-agents/ethics-101-instructors">Ethics 101 (instructors)</a>. </p>
+<h4>Ideas</h4>
+<p>In a recent publication, Nick Caputo asserts that &quot;AI constitutions (<a href="https://www.anthropic.com/news/claude-new-constitution">Claude’s Constitution by Anthropic</a> and <a href="https://model-spec.openai.com/2025-12-18.html">OpenAI’s Model Spec</a>) are real constitutions.&quot; He says these are &quot;documents that constitute, govern, and legitimateone of the world’s most potent emerging forms of power....&quot;</p>
+<h4>Structures or Character?</h4>
+<p>Publius<sup class="footnote-ref">1</sup><aside class="sidenote" id="fn-1"><span class="footnote-ref">1</span> This is the pseudonym under which John Jay, James Madison, and Alexander Hamilton published the Federalist Papers.</aside> writes in Federalist #51: &quot;If men were angels, no government would be necessary. If angels were to govern men, neither external nor internal controls on government would be necessary. In framing a government which is to be administered by men over men, the great difficulty lies in this: you must first enable the government to control the governed; and in the next place oblige it to control itself.&quot; The argument is that government exists only because people aren&#39;t angels, and the design problem is to build a structure that stays stable even though the people running it will act in self-interest rather than virtue. For Madison it is a mechanism-design puzzle: give the government enough power to control the governed, but then separately force it to control itself; external checks like elections won&#39;t do that job alone.</p>
+<p>The solution is architectural, not moral. The authors envision each part/branch of government having an incentive to resist encroachment by the others. &quot;Ambition counteracts ambition&quot; - self interest (which we might think of as a vice) supplies mutual social control (yielding social order which we might think of as a virtue).</p>
+<hr>
+<p><strong>Course Connections.</strong> We&#39;ll want to think about how this relates to organizations and hierarchy which are less homeostatic in spirit. And we might think about it in connection with markets where a similar reliance on self-interest drives the system toward alignment.  </p>
+<hr>
+<h4>Readings</h4>
+<ol>
+<li>Anthropic <span class="missing-link">Constitutional AI Harmlessness from AI Feedback</span></li>
+<li>Askell A et al. <a href="https://www-cdn.anthropic.com/d0636f72a9493d279ed36b33987da3430bcb5911/claudes-constitution_webPDF_26-02.02a.pdf">Claude&#39;s Constitution</a></li>
+<li>Caputo N 2026 &quot;<a href="https://modelconstitution.com/p/ai-constitutions-are-real-constitutions">AI Constitutions are Real Constitutions</a>&quot; on Model Constitutions</li>
+<li>Caputo N 2026 &quot;<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6954798">Can Claude Consent to its own Constitution? AI Constitutionalism and the Paradox of Constituent Power</a>&quot;</li>
+<li>Chiang, T 2010 <a href="https://laltromondo.amusewiki.org/testi/lifecycle/lifecycle_a4.pdf">The Lifecycle of Software Objects</a></li>
+<li>Hadfield GK, R Trivedi &amp; D Hadfield-Menell 2026 <a href="https://knightcolumbia.org/content/building-ai-for-the-democratic-matrix-a-technical-research-agenda-for-normative-competence-and-normative-institutions-1">Building AI for the Democratic Matrix: A Technical Research Agenda for Normative Competence and Normative Institutions</a> See also <span class="missing-link">DJR Clipped full text</span></li>
+<li>OpenAI <a href="https://model-spec.openai.com/2026-08-18.html">Model Spec</a></li>
+<li>Publius 1788 <a href="https://avalon.law.yale.edu/18th_century/fed51.asp">The Federalist Papers #51</a>.</li>
+<li>Rozenshtein AZ 2026 <a href="https://www.lawfaremedia.org/article/the-moral-education-of-an-alien-mind">The Moral Education of an Alien Mind</a></li>
+<li><a href="https://www.law.cornell.edu/constitution">US Constitution</a></li>
+</ol>
+</article></main></div>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>
