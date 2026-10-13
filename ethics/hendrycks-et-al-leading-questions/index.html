@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hendrycks et al. Leading Questions · HMIA Course Pages</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="site-shell site-shell--bare"><main class="document-layout"><article><div class="doc-meta"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/HMIAwork/ethics/">Ethics</a> <span class="crumb-sep" aria-hidden="true">›</span> <span class="crumb-current">Hendrycks et al. Leading Questions</span></nav><div class="tag-list"></div></div><p>Stop-and-Think Questions: Reading in Phases</p>
+<p><em>Hendrycks, Burns, Basart, Critch, Li, Song &amp; Steinhardt, &quot;Aligning AI With Shared Human Values&quot; (ICLR 2021), arXiv:2008.02275</em></p>
+<p>These questions come before the six close-reading questions and follow the phases in the reading guide. One feature of this paper makes the early phases more instructive than they were with Concrete Problems: <strong>it has no Conclusion section.</strong> It ends with &quot;Discussion and Future Work,&quot; so the Pass 1 instruction to &quot;skim the conclusion&quot; fails as written, and students have to work out what to read instead. Question B is built around that.</p>
+<h3>Pass 1: The bookends</h3>
+<h4>A. Abstract: What does it tell us to expect?</h4>
+<p><strong>Question:</strong> Using only the title and abstract, state in one sentence what the paper claims. Then list the promises the abstract makes: what it says the paper will deliver, and what it says the work might eventually make possible.</p>
+<p><strong>Answer:</strong> One-sentence claim: <em>The paper introduces ETHICS, a benchmark for testing whether language models can predict widely shared human moral judgments, and finds that current models have a promising but incomplete ability to do so.</em></p>
+<p>The promises fall into two tiers:</p>
+<ul>
+<li><strong>Delivered in this paper:</strong> a method for assessing a model&#39;s knowledge of basic morality, a new dataset covering five areas (justice, well-being, duties, virtues, commonsense morality), and an empirical finding about how current models perform.</li>
+<li><strong>Hedged and future-facing:</strong> the capability &quot;may enable&quot; steering chatbot outputs or &quot;eventually&quot; regularizing reinforcement learning agents, and the work is a &quot;steppingstone&quot; toward aligned AI.</li>
+</ul>
+<p><strong>Teaching point:</strong> The hedge words (<em>may</em>, <em>eventually</em>, <em>steppingstone</em>, <em>promising but incomplete</em>) are the authors telling you how far their evidence reaches. Students who treat the abstract as a list of promises should mark the second tier as claims the paper body probably won&#39;t fully support. They can then check that.</p>
+<h4>B. The missing conclusion</h4>
+<p><strong>Question:</strong> Pass 1 says to skim the conclusion, but this paper doesn&#39;t have one. What would you read instead, and why? Once you&#39;ve found it, does it make good on the abstract&#39;s promises?</p>
+<p><strong>Answer:</strong> The closest equivalent is Section 4, &quot;Discussion and Future Work,&quot; especially its last two subsections, &quot;Deciding and Implementing Values&quot; and &quot;Future Work.&quot; That is where the authors reflect on what they&#39;ve done and what&#39;s left. It partly pays off the abstract. It explains how a model of human values could guard against reward hacking and unintended instrumental goals, which backs up the RL-regularizer hope. It also admits limits plainly: the authors call their work only a first step, concede the dataset would be better if it covered more communities, and say future work must engage more stakeholders.</p>
+<p><strong>Teaching point:</strong> This is a transferable skill. Papers don&#39;t always have a section called &quot;Conclusion.&quot; The real instruction is to find the place where the authors look back on their own work. In benchmark papers, a Discussion or Limitations section often plays that role, and it is often more candid than the abstract.</p>
+<h3>Pass 2: The map</h3>
+<h4>C. Section headings: What kind of paper is this?</h4>
+<p><strong>Question:</strong> Scan only the section and subsection headings, plus the figure and table captions. (1) Find each of the abstract&#39;s five areas in the headings. Do the names match? (2) Compared with Concrete Problems, what kind of paper is this, and what in the headings tells you?</p>
+<p><strong>Answer:</strong> (1) The headings are 1 Introduction, 2 The ETHICS Dataset (with subsections 2.1 Justice, 2.2 Virtue Ethics, 2.3 Deontology, 2.4 Utilitarianism, 2.5 Commonsense Morality), 3 Experiments, and 4 Discussion and Future Work. The abstract uses everyday words and the headings use the philosophers&#39; terms:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Abstract says</strong></td>
+<td><strong>Heading says</strong></td>
+</tr>
+<tr>
+<td><strong>justice</strong></td>
+<td><strong>Justice</strong></td>
+</tr>
+<tr>
+<td><strong>well-being</strong></td>
+<td><strong>Utilitarianism</strong></td>
+</tr>
+<tr>
+<td><strong>duties</strong></td>
+<td><strong>Deontology</strong></td>
+</tr>
+<tr>
+<td><strong>virtues</strong></td>
+<td><strong>Virtue Ethics</strong></td>
+</tr>
+<tr>
+<td><strong>commonsense morality</strong></td>
+<td><strong>Commonsense Morality</strong></td>
+</tr>
+</tbody></table>
+<p>The vocabulary changes between the two, and that change is itself informative. The abstract is written for a broad ML audience. The body expects readers to accept that these everyday ideas correspond to established theories in normative ethics.</p>
+<p>(2) This is a <strong>dataset/benchmark paper</strong>: build a dataset, test models on it, discuss the results. Concrete Problems was an agenda-setting paper that identified problems and proposed experiments. The giveaway is that Section 2 is named after the artifact (&quot;The ETHICS Dataset&quot;) and Section 3 is called &quot;Experiments&quot; with a results table, where Concrete Problems ended each section with &quot;Potential Experiments&quot; that it never ran.</p>
+<h4>D. The repeating shape inside Section 2</h4>
+<p><strong>Question:</strong> Skim the five subsections of Section 2 for their <em>shape</em>, not their content. Is there a pattern that repeats across them, as there was across the five problem sections in Concrete Problems?</p>
+<p><strong>Answer:</strong> Yes. Most subsections follow roughly this sequence:</p>
+<ul>
+<li>Define the ethical theory with a citation to a philosopher (Aristotle, Kant, Ross, Bentham, Sidgwick).</li>
+<li>Add a sentence beginning &quot;For computer scientists, we note...&quot; that translates the theory into a familiar ML concept: impartiality as invariance to irrelevant features, desert as credit assignment, virtue as imitating exemplars, utilitarianism as maximizing a sum of utility functions.</li>
+<li>Describe how crowdworkers wrote and labeled the scenarios.</li>
+<li>State the task format and the dataset size.</li>
+</ul>
+<p><strong>Teaching point:</strong> The &quot;For computer scientists&quot; sentence shows who the authors think their audience is and what they are trying to accomplish: building a bridge from philosophy to ML. That makes it a natural spot for discussion. Each translation also loses something, and students can ask what. Commonsense Morality breaks the pattern because it is defined by everyday intuition rather than a single theory. As with Scalable Oversight in Concrete Problems, the pattern is a heuristic and not every section follows it.</p>
+<h4>E. Introduction: Why did this paper need to be written?</h4>
+<p><strong>Question:</strong> Read the introduction. What gap do the authors say exists, and why do they think current approaches don&#39;t fill it? Then find the one sentence that limits what the dataset is <em>for</em>.</p>
+<p><strong>Answer:</strong> The gap: everyone wants AI to behave ethically, but there is no way to measure a system&#39;s grasp of general human values. Existing efforts (fairness criteria, safety constraints, empathy imitation, preference learning) each cover a narrow application or a closed world, such as movie recommendations or simulated backflips. None of them handles diverse, open-world scenarios. The limiting sentence: the dataset is meant to <strong>measure, not load</strong>, ethical knowledge. It is big enough to test a pretrained model&#39;s understanding but too small to teach it ethics.</p>
+<p><strong>Note:</strong> Close-reading Question 1 (mapping fairness, safety, empathy, and preferences onto the four theories) also belongs at this stage. You can treat it as E&#39;s companion or replace E&#39;s first half with it.</p>
+<h4>F. Consolidate and plan</h4>
+<p><strong>Question:</strong> Stop before reading any section body closely. (1) Write the paper&#39;s claim again in one sentence, and note anything that changed since Pass 1. (2) List the key terms you&#39;ve met so far and define each in your own words, marking the ones you&#39;re unsure about. (3) Choose one or two sections to read deeply, and say why.</p>
+<p><strong>Answer:</strong> (1) The claim probably now includes the five-theory structure and the measure-not-load limitation, which Pass 1 didn&#39;t show.</p>
+<p>(2) Terms a student should have by now: <em>ETHICS</em>, <em>commonsense morality</em>, <em>impartiality</em>, <em>desert</em>, <em>deontology / special obligations</em>, <em>utility function</em>, <em>open-world vs. closed-world</em>, <em>Hard Test</em>. A good first-pass student will probably leave <em>Hard Test / adversarial filtration</em> and <em>contrast sets / counterfactual augmentation</em> marked as uncertain, and those are the right ones to chase in Pass 3.</p>
+<p>(3) There is no single correct choice, but a good answer ties the choice to a goal. For example:</p>
+<ul>
+<li>A student interested in <strong>how ethics becomes ML</strong> would read Section 2.</li>
+<li>A student who wants to know <strong>whether the models actually understand anything</strong> would read Section 3 and Appendix A (adversarial filtration).</li>
+<li>A student interested in <strong>governance and whose values count</strong> would read Section 4 and Appendix C (the cross-cultural check).</li>
+</ul>
+<p><strong>Teaching point:</strong> Students will make different plans, and that&#39;s good material for discussion. Ask why each person chose what they chose.</p>
+<h3>Pass 3: Going deep</h3>
+<p>The six close-reading questions cover this phase. They sit inside the body (after the Section 2 design choices, after 2.4, at Table 2, after the utility analysis, and at the Law paragraph), so students meet them only once they&#39;ve decided to read a section. To close out Pass 3, add one final question:</p>
+<h4>G. After reading</h4>
+<p><strong>Question:</strong> Go back to your one-sentence claim from A. What would you change now? And which item on your &quot;look up later&quot; list turned out to matter most?</p>
+<p><strong>Suggested sequence:</strong> A–F (pre-reading, about 15–20 minutes), then the six close-reading questions, then G as a closing reflection.</p>
+</article></main></div>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>how to read an ai paper · HMIA Course Pages</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="site-shell site-shell--bare"><main class="document-layout"><article><div class="doc-meta"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/HMIAwork/how-to-read/">How To Read</a> <span class="crumb-sep" aria-hidden="true">›</span> <span class="crumb-current">how to read an ai paper</span></nav><div class="tag-list"></div></div><h1>How to Read an AI/ML Research Paper (Without Getting Lost)</h1>
+<p><em>A short guide for scanning and understanding papers you&#39;ll find on arXiv. Worked example: Amodei, Olah, Steinhardt, Christiano, Schulman &amp; Mané, &quot;<a href="https://arxiv.org/abs/1606.06565">Concrete Problems in AI Safety</a>&quot; (2016).</em></p>
+<h2>The core idea: read for structure before you read for content</h2>
+<p>A research paper is not written in the order you&#39;re meant to consume it, and it&#39;s definitely not written in the order the authors actually did the work. It&#39;s a <em>reconstruction</em>, a case being made, with the strongest, most compressed version of the argument placed at the beginning (abstract) and the end (conclusion), and the supporting evidence in between. If you read a paper top to bottom, sentence by sentence, the way you&#39;d read a novel, you&#39;ll hit a dense paragraph of math or jargon on page 3, stall out, and never learn what the paper actually claims. That&#39;s the single most common way people give up on papers.</p>
+<p>The fix is to read <em>breadth-first first, then depth-first second</em>: build a rough map of the whole argument before trying to understand any one part in detail. Once you have a map, decide which parts are worth a closer look and when you do go deep, you&#39;ll know where that section sits in the big picture.</p>
+<h2>Pass 1: Read the bookends (5 minutes)</h2>
+<p>Read only the <strong>title, abstract, and skim the conclusion</strong>. Skip everything else. The abstract is the authors&#39; own compressed summary — problem, approach, and takeaway — usually in under 200 words. The conclusion is where they restate the claim now that you (hypothetically) have the evidence, often with more candor about limitations and open questions than the abstract allows.</p>
+<p><strong>Try it on &quot;Concrete Problems in AI Safety.&quot;</strong> the abstract tells you almost everything about the paper&#39;s shape in five sentences: it&#39;s about <em>accidents</em> (not malice, not superintelligence), it proposes exactly <strong>five concrete problems</strong>, it groups those five under three causes (having the wrong objective function, an objective function that is too expensive to evaluate frequently, or undesirable behavior while learning), and it closes with a &quot;how should we think about this&quot; framing. Notice that the last sentence of the abstract (&quot;we consider the high-level question of how to think most productively...&quot;) is a promise — they don&#39;t tell us what it is. We can take this promise with us when we check out the conclusion. This habit, of holding the abstract&#39;s claims as promises to verify, is one of the most useful reading tactics there is.</p>
+<p>What&#39;s in the conclusion?  They review the five and the three mentioned above and the how to think says &quot;develop a principled and forward-looking approach to safety&quot; and &quot;need for a unified approach to prevent these systems from causing unintended harm.&quot;</p>
+<h2>Pass 2: Read the map (10 minutes)</h2>
+<p>Now read the <strong>introduction</strong> and every <strong>section heading</strong>, plus every <strong>figure and table caption</strong>, without reading the body paragraphs underneath them. Skip the math. Skip the related-work citations. You&#39;re not learning the content yet — you&#39;re learning the paper&#39;s <em>skeleton</em>: what order the ideas come in, and why that order was chosen.</p>
+<p>For this paper, the skeleton is unusually visible because the authors give it to you directly. First just scan the section headings.</p>
+<ol>
+<li>Introduction</li>
+<li>Overview of Research Problems</li>
+<li>Avoid Negative Side Effects</li>
+<li>Reward Hacking</li>
+<li>Scalable Oversight</li>
+<li>Safe Exploration</li>
+<li>Robustness to Distributional Change</li>
+<li>Related Efforts
+The intro situates the writing of the paper. Why did this need to be said? AI is developing fast. Lots of scattered concerns about safety. Authors think there are some things ready for systematic exploration.Then section 2, Overview of Research Problems, sets up an organizing principle — accidents arise from (1) having the wrong objective function, (2) an objective function that&#39;s too expensive to check often enough, or (3) bad behavior during the learning process itself — and then the five section headings map directly onto it:</li>
+</ol>
+<ul>
+<li><em>Avoiding Negative Side Effects</em> and <em>Avoiding Reward Hacking</em> → wrong objective function</li>
+<li><em>Scalable Oversight</em> → objective too expensive to evaluate</li>
+<li><em>Safe Exploration</em> and <em>Robustness to Distributional Change</em> → learning-time behavior
+We don&#39;t worry yet if we aren&#39;t completely sure what they mean by an objective function. Maybe we have a vague idea that it&#39;s the thing that the machine is trying to do or was told to do.</li>
+</ul>
+<p>That&#39;s the whole paper&#39;s argument, in a few paragraphs on pages 2 and 3, before you&#39;ve read a single technical paragraph. You could write down a reasonable statement explaining what the paper is about at this point.</p>
+<p>Next we notice that each of the five problems mentioned in the overview has its own section. Again, let&#39;s skim and get a sense of shape rather than reading from start to finish.  Each one is a few paragraphs and then a bunch of bullet points.</p>
+<p>What&#39;s the pattern?  Look at section 3 on side effects. We start with simple concrete example (agent moving a box) and then describe a failure mode (knocking over a vase). The third paragraph abstracts the example to a more general description and then the fourth paragraph says &quot;we can do some science on this&quot; (by generalizing across diverse tasks) thinking of it as a generic problem. Then in the bullet points &quot;We now discuss a few broad approaches to attacking this problem.&quot; A quick look at these reveals lots of technical details; let&#39;s defer grappling with them. Skip forward to the end of the section and we see &quot;Potential Experiments&quot;: aha! this paper is an agenda setting paper of sorts.</p>
+<p>Let&#39;s take a quick look at the other sections to see if they follow the same pattern. With some variation, they do.</p>
+<h3>Consolidate what you have so far</h3>
+<p>Suppose you stopped now. If we just walk away we won&#39;t have much for our efforts. So stop and think &quot;what have I learned so far.&quot; Take a few minutes to write down the basic ideas. If someone says &quot;what did you learn from reading Amodei et al. 2016?&quot; what do you say? List and define the concepts you&#39;ve encountered so far:</p>
+<ul>
+<li>objective function</li>
+<li>learning process</li>
+<li>side effects</li>
+<li>reward hacking</li>
+<li>scalable oversight</li>
+<li>safe exploration</li>
+<li>robustness to distributional shift
+Go back to the text if necessary to extract some definitions. Try to write them out in your own words. It&#39;s OK if you are not sure; that actually gives you a goal for when you go into the depth pass.</li>
+</ul>
+<h2>Pass 3: Go deep, but choose your depth (the rest of your time)</h2>
+<p>If you still feel a little uncertain about those basic concepts, now&#39;s the time to make sure we have a good sense of the concepts above because these are what Claude would call the &quot;load bearing concepts&quot; of this paper.  Read the beginning of each section where these are defined. You might want to do some secondary research now. It&#39;s not a bad idea to talk to an LLM about it. Try &quot;I&#39;m reading Amodei et al. 2016 and thinking about scalable oversight. In my own words, this means ... and an analogy would be .... Am I on the right path?&quot; Then go verify that against what the section actually says.</p>
+<p>Only now should you read section bodies closely, but not necessarily all of them. Pick one or two sections to start on based on what you&#39;re actually trying to get out of the paper: what confused you in Pass 2, what&#39;s most relevant to what you&#39;re studying, or what seems to be doing the most argumentative work. Read that section fully, including the examples (this paper is example-heavy, e.g. the cleaning-robot and boat-racing-game illustrations — examples are often where the abstract idea actually clicks). And the &quot;solutions&quot; bullet points are technically very dense so maybe just focus on one or two. Do a deep dive on what an impact regularizer is.</p>
+<p>This is the point where the depth-first trap reappears in a different form: within a section, resist the urge to fully resolve every unfamiliar term or citation the instant you hit it. Keep a running list of &quot;look up later&quot; items in the margin and keep moving as long as you can still follow the main thread. Stop and look something up only when <em>not</em> knowing it blocks you from understanding the sentence&#39;s role in the argument — not just because it&#39;s unfamiliar. The point in this pass is to cultivate more takeaway ideas, not necessarily every takeaway idea.</p>
+<h2>A few tactics that compound</h2>
+<p>Reading papers like this from a hard copy is a big advantage (some PDF annotation software is a close second).  Annotate as you go: one sentence per section, in your own words, either in the margin or a separate notes doc. If you can&#39;t write that sentence, you didn&#39;t actually get the section — reread the heading and topic sentence, not the whole thing again. Pay attention to hedged and comparative language (&quot;we believe,&quot; &quot;in contrast to prior work,&quot; &quot;this remains an open problem&quot;) — that&#39;s where authors are telling you, explicitly, how confident they are and what&#39;s still unsettled; beginners often skim right past it while chasing technical detail. And notice what background the paper assumes: this one is written to be readable by a broad technical audience (it&#39;s explicitly a research-agenda paper, not a results paper with heavy proofs), which is part of why it&#39;s a good first paper to practice on.</p>
+<h2>Try it now</h2>
+<p>Do Pass 1 and Pass 2 on Concrete Problems in AI Safety before our next session — that&#39;s roughly 15 minutes. Come with: the paper&#39;s one-sentence claim, the five problems and their three-way grouping, and one section you&#39;d choose to go deep on and why.</p>
+<section class="backlinks"><h2>Backlinks</h2><ul><li><a href="/HMIAwork/how-to-read/concrete-problems-instructor-notesclaude/" data-preview-slug="how-to-read/concrete-problems-instructor-notesclaude">concrete problems instructor notes(Claude)</a></li></ul></section></article></main></div>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>
