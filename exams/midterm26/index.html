@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midterm26 · HMIA Course Pages</title>
+<link rel="icon" href="/HMIAwork/favicon.svg">
+<link rel="stylesheet" href="/HMIAwork/assets/site.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="site-shell site-shell--bare"><main class="document-layout"><article><div class="doc-meta"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/HMIAwork/exams/">Exams</a> <span class="crumb-sep" aria-hidden="true">›</span> <span class="crumb-current">Midterm26</span></nav><div class="tag-list"></div></div><h3>Structure</h3>
+<p>5 random concepts/terms</p>
+<p>1 class session review</p>
+<ul>
+<li>How did our four historical anecdotes parallel Stuart Russell&#39;s 2014 talk about value alignment?</li>
+<li>In Brian Christian&#39;s <em>The Alignment Problem</em> </li>
+<li>Describe two ways the former Pfizer Building column collapse and the OpenAI/Hugging Face incident of this past July are the same and two ways they are different.</li>
+<li>Concrete Problems</li>
+<li>AI101</li>
+<li>Select one of the eight sacred texts we looked at. What human intelligence alignment problem does it address? What machine intelligence alignment problem could it analogously address?</li>
+<li>In our public goods game simulation we were, in a sense, on the look out for &quot;conditional cooperators.&quot; Why might it be important in a population of agents to have conditional cooperators?</li>
+<li>Ethics 1,2,3,4</li>
+</ul>
+<hr>
+<h2>Class Session Summaries</h2>
+<h3>1. Four Moments of Intelligence Alignment</h3>
+<p>Four fictional scenes: <strong>Hunters&#39; Fire</strong>, <strong>Ancient Experts</strong>, <strong>Merchants&#39; Charter</strong>, and <strong>Cult of Copyists</strong>. In each, people recognized the value of a kind of &quot;super intelligence&quot; they could not live without, along with its dangers:</p>
+<ul>
+<li>You can&#39;t know what&#39;s in the other clever hunter&#39;s head.</li>
+<li>You need witches and sorcerers, but they hold inordinate power.</li>
+<li>Corporations are amazing but scary powerful. What if one got out of control?</li>
+<li>Scholars are important, but they can go off the rails, leading to misinformation or loss of information.</li>
+</ul>
+<p><strong>Remedies</strong> included making promises in front of the whole group, not keeping sorcery within a single family, requiring Parliament to review high-impact decisions, and having multiple institutions with examiners separate from teachers.</p>
+<h3>2. Alignment 101</h3>
+<p>We read the introduction and first chapter of Brian Christian&#39;s <em>The Alignment Problem</em>. Topics:</p>
+<ul>
+<li>The <strong>COMPAS</strong> algorithm and its use to predict recidivism in the criminal justice system</li>
+<li>Bias in machine learning models around skin color and facial recognition</li>
+<li>The basic conundrum of <strong>tradeoffs between different kinds of fairness</strong></li>
+<li>The difference between <strong>existential risk</strong> concerns and more immediate <strong>fairness and injustice</strong> concerns</li>
+</ul>
+<p><strong>Big takeaway:</strong> misaligned AI has real, and potentially large, material consequences for people.</p>
+<h3>3. Alignment July 2026</h3>
+<p>We read newspaper articles about a New York City building being converted into residences, and what happened when it began to show signs it might collapse. The articles traced where the process failed and which practices and institutions were in place to prevent catastrophe. We drew an analogy to the <strong>OpenAI/Hugging Face incident</strong>.</p>
+<ul>
+<li><strong>Main point:</strong> building safety has things that AI safety lacks. There is no AI analog to the building code, the building department, or building inspectors, and the professional layers around building (engineers, architects, etc.) are less developed in AI.</li>
+<li><strong>Visibility:</strong> when the building was in danger, everyone was out in the street looking up. People were evacuated, newspapers took telephoto pictures, and reporters could get copies of the blueprints from the building department.</li>
+<li><strong>Safety culture:</strong> why it matters in building safety and how it might matter in AI safety.</li>
+</ul>
+<h3>4. Concrete Problems of AI Safety</h3>
+<p>A ten-year-old paper by <strong>Amodei et al.</strong> that still packs a punch. Its emphasis is on <em>accidents</em>: the authors were thinking like safety engineers.</p>
+<table>
+<thead>
+<tr>
+<th>Source of the problem</th>
+<th>Problems</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Wrong objective function</td>
+<td>Avoiding negative side effects; avoiding reward hacking</td>
+</tr>
+<tr>
+<td>Objective function too expensive to evaluate frequently</td>
+<td>Scalable oversight</td>
+</tr>
+<tr>
+<td>Undesirable behavior during learning</td>
+<td>Safe exploration; robustness to distributional shift</td>
+</tr>
+</tbody></table>
+<p>For each of the five problems, the paper describes a few approaches to solving it.</p>
+<h3>5. AI 101: Neural Networks</h3>
+<p>We worked through a very simple neural network with a <strong>single neuron</strong> and showed how training data can be used to learn a simple linear function. Concepts:</p>
+<ul>
+<li>Data space vs. model space</li>
+<li>Loss functions</li>
+<li>Backpropagation, with calculus and the <strong>chain rule</strong> used to compute gradients</li>
+</ul>
+<p>We did the math by hand and saw how the calculations adjust the model parameters (just <em>m</em> and <em>b</em>) to improve the model&#39;s predictions.</p>
+<h3>6. AI 101: Fine Tuning</h3>
+<p>How a pre-trained model becomes a chatbot and gets better at acting as an assistant. Topics:</p>
+<ul>
+<li>How human data is used in fine tuning</li>
+<li>Where matrices come into the picture</li>
+<li>How embeddings work</li>
+<li>The <strong>residual stream</strong></li>
+<li>How the model predicts the next token</li>
+<li>What the <strong>softmax</strong> function does and how it computes probabilities</li>
+</ul>
+<h3>7. Alignment and the Sacred</h3>
+<p>We read short passages from the sacred literatures of various traditions, such as the <strong>Sermon on the Mount</strong>, the <strong>Bhagavad Gita</strong>, and the <strong>Diamond Sutra</strong>, and discussed their relevance to alignment and AI safety.</p>
+<ul>
+<li><strong>The crux:</strong> religion and sacred texts can be seen as <em>human alignment texts</em>.</li>
+<li>We mentioned Paul Colognese&#39;s presentation on Buddhism and AI, and experiments in which Claude was given the option to study with a Buddhist teacher.</li>
+<li>We foreshadowed later conversations about Claude, personas, and constitutions.</li>
+<li>We discussed the idea of LLMs having emotions and how people study that.</li>
+</ul>
+<h3>8. Alignment and Social Order</h3>
+<p>Readings:</p>
+<ul>
+<li><strong>Hechter &amp; Horne:</strong> the problem of social order as a problem of coordination and cooperation, including collective action and free riders.</li>
+<li><strong>Randall Collins, &quot;The Nonrational Foundations of Rationality&quot;:</strong> rationality rests on shared beliefs and ritual solidarity.</li>
+<li><strong>Fehr &amp; Gintis:</strong> the public goods game.</li>
+</ul>
+<p>In class we played a version of the <strong>public goods game</strong> and discussed the results. We were especially interested in whether people would punish free riders even when it cost them something. We also discussed <strong>strong reciprocity</strong> as a possible foundation for social order.</p>
+<h3>9. Ethics: Just Make the Agents Good</h3>
+<p>Basic definitions and the shape of the field.</p>
+<ul>
+<li><strong>Normative ethics:</strong> What should I do?<ul>
+<li><em>Consequentialism:</em> the right action maximizes good consequences.</li>
+<li><em>Deontology:</em> the right action follows moral rules or duties.</li>
+<li><em>Virtue ethics:</em> the right action expresses virtuous character traits.</li>
+</ul>
+</li>
+<li><strong>Metaethics:</strong> What is the nature of moral reasoning?<ul>
+<li><em>Moral realism:</em> there are objective moral facts.</li>
+<li><em>Moral anti-realism:</em> there are no objective moral facts.</li>
+<li><em>Moral relativism:</em> moral facts are relative to cultures or individuals.</li>
+</ul>
+</li>
+<li><strong>Applied ethics:</strong> How do we apply moral reasoning to specific cases? Examples include medical, business, environmental, and AI ethics.</li>
+</ul>
+<h3>10. Ethics: Measuring Value Alignment</h3>
+<p>We read <strong>Hendrycks et al. (2021)</strong> on value alignment. The authors show how efforts at value alignment track several fields of ethics, and they propose a dataset and methodology for measuring value alignment in AI systems.</p>
+<ul>
+<li>They crowdsourced short statements describing ethical situations in five categories: <strong>virtue, deontology, consequentialism, everyday ethics (commonsense), and justice</strong>.</li>
+<li>We looked at what the data looks like and how it was &quot;fed&quot; into language models.</li>
+<li><strong>Results were mixed:</strong> the models weren&#39;t very good at ethics, but these were pre-ChatGPT-era models.</li>
+</ul>
+<h3>11. Ethics: Virtue Ethics</h3>
+<p>Virtue ethics emphasizes <strong>character and virtue</strong> over rules or consequences. It asks what kind of person one should be and which virtues one should cultivate. Key concepts:</p>
+<ul>
+<li>Virtuous character</li>
+<li>Practical wisdom (<em>phronesis</em>)</li>
+<li>Moral excellence achieved through habituation and practice</li>
+</ul>
+<p>We read <strong>Shannon Vallor and Wendell Wallach</strong> on machine virtue. They carefully laid out what we would expect of a machine we could call virtuous. They were not optimistic that such a machine could be built, but they considered the approach valuable for two reasons: it points in the right direction, and it provides a benchmark. Machines that cannot meet it should be subject to guardrails and constraints.</p>
+</article></main></div>
+<script>window.MDVIEW_BASE="/HMIAwork/"</script>
+<script type="module" src="/HMIAwork/assets/hover-previews.js"></script>
+</body>
+</html>
